@@ -3,3 +3,25 @@
 .bg-sucess {
     background: #85b434;
 }
+
+
+.bg-sucessf {
+    background: #ebeceb;
+}
+
+@font-face {
+    font-family: "WebSymbolsRegular";
+    src: url('assets/fonts/websymbols-regular-webfont.eot');
+    src: url('assets/fonts/websymbols-regular-webfont.eot?#iefix')format('embedded-opentype'),
+        url('assets/fonts/websymbols-regular-webfont.woff')format('woff'),
+        url('assets/fonts/websymbols-regular-webfont.ttf')format('truetype'),
+        url('assets/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular')format('svg');
+
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    font-family: "WebSymbolsRegular";
+}
