@@ -50,3 +50,10 @@
     font-weight: bold;
 }
 
+
+
+.bg-secondary {
+    background-size: cover;
+    background-position: 100%;
+    background-image: url('/assets/img/7.avif');
+}
