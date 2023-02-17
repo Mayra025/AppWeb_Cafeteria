@@ -26,3 +26,8 @@
 .icon {
     font-family: "WebSymbolsRegular";
 }
+
+body {
+    background-image: url('/assets/img/7.avif');
+    background-position: 0%;
+}
