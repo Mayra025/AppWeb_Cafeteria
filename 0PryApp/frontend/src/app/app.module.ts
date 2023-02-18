@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
+import { PromocionesComponent } from './promociones/promociones.component';
 
 
 
@@ -14,6 +15,7 @@ import { MenuComponent } from './menu/menu.component';
     AppComponent,
   
     MenuComponent,
+        PromocionesComponent,
    
   ],
   imports: [
