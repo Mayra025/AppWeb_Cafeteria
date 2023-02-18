@@ -1,12 +1,17 @@
 import { NgModule } from "@angular/core";
 import {RouterModule,Routes} from "@angular/router";
-import { InicioComponent } from "./inicio/inicio.component";
+import { MenuComponent } from "./menu/menu.component";
+
+
+
 
 
 //array de rutas
 const router:Routes=[
-    {path:'inicio',component:InicioComponent},
-    {path:'**',component:InicioComponent} //en caso de error 404, no carga
+//Menu
+{path:'Menu',component: MenuComponent},
+{path:'**',component: MenuComponent} //en caso de error 404, no carga
+
 
 ];
 

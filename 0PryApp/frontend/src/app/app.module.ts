@@ -2,19 +2,25 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { InicioComponent } from './inicio/inicio.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './menu/menu.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent
+  
+    MenuComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, //para el modulo de rutas
-    HttpClientModule
+    HttpClientModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
