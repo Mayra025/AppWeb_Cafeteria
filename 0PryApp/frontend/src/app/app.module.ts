@@ -7,12 +7,16 @@ import { InicioComponent } from './inicio/inicio.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistroComponent } from './registro/registro.component';
+import { CBodyDirective } from './c-body.directive';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    RegistroComponent
+    RegistroComponent,
+    CBodyDirective,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
