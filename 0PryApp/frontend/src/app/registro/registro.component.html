@@ -1,86 +1,88 @@
 <body id="regis">
-    
-
-<div class="container px-4 px-lg-5">
-    <div class="card text-white bg-secondary my-5 py-4">
-        <div class="row gx-4 gx-lg-5 align-items-center my-5">
-            <div class="col-lg-7">
-
-                <form class="user" #formReg="ngForm">
-                    <div class="form-group">
-                        <label for="correo">Correo</label>
-                        <input type="text" name="correo" #correo="ngModel" [(ngModel)]="reg.correo" required pattern=""
-                            class="form-control form-control-user" placeholder="Correo" />
-                        <span *ngIf="correo.touched && !correo.valid">
-                            * Correo es obligatorio
-                        </span>
-
-                    </div>
-                    <br>
-
-                    <div class="form-group">
-                        <label for="nombres">Nombres Completos</label>
-                        <input type="text" name="nombres" #nombres="ngModel" [(ngModel)]="reg.nombre" required
-                            pattern="[a-zA-Z]+" class="form-control form-control-user"
-                            placeholder="Nombres Completos" />
-                        <span *ngIf="nombres.touched && !nombres.valid">
-                            * Nombre es obligatorio
-                        </span>
-                    </div>
-                    <br>
-
-                    <br>
-
-                    <div class="form-group">
-                        <label for="apellidos">Apellidos Completos</label>
-                        <input type="text" name="apellidos" #apellidos="ngModel" [(ngModel)]="reg.apellido" required
-                            pattern="[a-zA-Z]+" class="form-control form-control-user"
-                            placeholder="Apellidos Completos" />
-                        <span *ngIf="apellidos.touched && !apellidos.valid">
-                            * Apellido es obligatorio
-                        </span>
-                    </div>
-                    <br>
-
-                    <div class="form-group">
-                        <label for="domicilio">Domicilio</label>
-                        <input type="text" name="domicilio" #domicilio="ngModel" [(ngModel)]="reg.domicilio" required
-                            class="form-control form-control-user" placeholder="Domicilio" />
-                        <span *ngIf="domicilio.touched && !domicilio.valid">
-                            * Domicilio es obligatorio
-                        </span>
-                    </div>
-                    <br>
-
-                    <div class="form-group">
-                        <label for="telefono">Teléfono</label>
-                        <input type="text" name="telefono" #telefono="ngModel" [(ngModel)]="reg.telefono" required
-                            pattern="[0-9]+" class="form-control form-control-user" placeholder="Teléfono" />
-                        <span *ngIf="telefono.touched && !telefono.valid">
-                            * Teléfono es obligatorio
-                        </span>
-                    </div>
-                    <br>
 
 
+    <div class="container px-4 px-lg-5">
+        <div class="card text-white bg-secondary my-5 py-4">
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="col-lg-5">
 
-                    <input type="submit" name="Enviar" [disabled]="!formReg.form.valid"
-                        class="btn btn-primary btn-sucess btn-block">
-                </form>
-            </div>
+                    <form class="user" #formReg="ngForm">
+                        <div class="form-group">
+                            <label for="correo">Correo</label>
+                            <input type="text" name="correo" #correo="ngModel" [(ngModel)]="reg.correo" required
+                                pattern="" class="form-control form-control-user" placeholder="Correo" />
+                            <span *ngIf="correo.touched && !correo.valid">
+                                * Correo es obligatorio
+                            </span>
 
-            <div class="col-lg-5">
-                <h1 class="font-weight-light">Wrap de espinacas, feta y clara de huevo</h1>
-                <p>
-                    Te presentamos una buena opción para las mañanas.
-                    <br> <br> Además, contamos con un variado menú en Bebidas,
-                    Pastelería, Comida y más.
-                </p>
-                <a class="btn btn-sucess text-bold" href="#!">Revisar menú!</a>
+                        </div>
+                        <br>
+                        <!-- 
+                        <div class="form-group">
+                            <label for="nombres">Nombres Completos</label>
+                            <input type="text" name="nombres" #nombres="ngModel" [(ngModel)]="reg.nombre" required
+                                pattern="[a-zA-Z]+" class="form-control form-control-user"
+                                placeholder="Nombres Completos" />
+                            <span *ngIf="nombres.touched && !nombres.valid">
+                                * Nombre es obligatorio
+                            </span>
+                        </div>
+                        <br>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label for="apellidos">Apellidos Completos</label>
+                            <input type="text" name="apellidos" #apellidos="ngModel" [(ngModel)]="reg.apellido" required
+                                pattern="[a-zA-Z]+" class="form-control form-control-user"
+                                placeholder="Apellidos Completos" />
+                            <span *ngIf="apellidos.touched && !apellidos.valid">
+                                * Apellido es obligatorio
+                            </span>
+                        </div>
+                        <br>
+
+                        <div class="form-group">
+                            <label for="domicilio">Domicilio</label>
+                            <input type="text" name="domicilio" #domicilio="ngModel" [(ngModel)]="reg.domicilio"
+                                required class="form-control form-control-user" placeholder="Domicilio" />
+                            <span *ngIf="domicilio.touched && !domicilio.valid">
+                                * Domicilio es obligatorio
+                            </span>
+                        </div>
+                        <br>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" name="telefono" #telefono="ngModel" [(ngModel)]="reg.telefono" required
+                                pattern="[0-9]+" class="form-control form-control-user" placeholder="Teléfono" />
+                            <span *ngIf="telefono.touched && !telefono.valid">
+                                * Teléfono es obligatorio
+                            </span>
+                        </div>
+                        <br>
+-->
+
+
+                        <input type="submit" name="Continuar" [disabled]="!formReg.form.valid"
+                            class="btn btn-primary btn-sucess btn-block" value="Continuar">
+                    </form>
+                </div>
+
+                <div class="col-lg-2">
+                   
+                </div>
+
+                <div class="col-lg-5">
+                    <h1 class="font-weight-light">Registrate :)</h1>
+                    <p>
+                        <br><br>
+                        Para recibir tus facturas, información de <br> promociones y ofertas, registra tu correo.
+                    </p>
+                </div>
+
             </div>
 
         </div>
-
     </div>
-</div>
 </body>

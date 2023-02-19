@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit,Renderer2,ViewChild } from '@angular/core';
 import { Registro } from '../models/registro';
 
 @Component({
@@ -9,8 +9,9 @@ import { Registro } from '../models/registro';
 export class RegistroComponent implements OnInit {
   public reg: Registro;
 
+  
 
-  constructor() {
+  constructor(private renderer: Renderer2) {
     this.reg = new Registro('', '', '', '', '', '')
   }
   ngOnInit(): void {
