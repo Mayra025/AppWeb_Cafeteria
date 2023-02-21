@@ -1,58 +1,81 @@
 <!-- Page Content-->
 <div class="container px-4 px-lg-5">
-    <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">Estamos Aquí</h1>
+    <h1 class="text-center text-uppercase text-secondary mb-0">Estamos Aquí</h1>
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+    </div>
+
     <!-- Mapa-->
     <div class="mapa row gx-4 gx-lg-5 align-items-center my-5">
-        <iframe class=" mb-10 mb-lg-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63836.864583871546!2d-78.5377586117527!3d-0.1533147213628827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a5989171b75%3A0xcb87302c51f1645!2sLa%20Casa%20de%20la%20Humita%20y%20el%20Tamal%20Lojano!5e0!3m2!1ses-419!2sec!4v1676953828579!5m2!1ses-419!2sec" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63836.864583871546!2d-78.5377586117527!3d-0.1533147213628827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a5989171b75%3A0xcb87302c51f1645!2sLa%20Casa%20de%20la%20Humita%20y%20el%20Tamal%20Lojano!5e0!3m2!1ses-419!2sec!4v1676953828579!5m2!1ses-419!2sec" width="700" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <!-- Contacto-->        
-    <div>
-        <h1>CONTACTO</h1>
+    <div class="contacto">
+        <h1 class="text-center text-uppercase text-secondary mb-0">CONTACTO</h1>
+        <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
         <p>
-            <h2>Dirección:</h2>
+            <h2 >Dirección:</h2>
             <a href="#" class="icon">?</a>
-            <span> Selva Alegre Selva Alegre, Y Oe8-255 y, Quito 170521</span>
+            <span> Selva Alegre Selva Alegre, Y Oe8-255 y, Quito 170521 <br></span>
 
             <h2>Teléfonos:</h2>
             <a href="#" class="icon">u</a>
-            <span> 1800 486 482</span>
+            <span> 1800 486 482 <br></span>
             
             <h2>Correo:</h2>
             <a href="#" class="icon">@</a>
-            <span> info@lacasadelahumita.ec</span>   
+            <span> info@lacasadelahumita.ec <br></span>   
         <p>
     </div>
 
     <!-- Formulario de Contacto-->
 
     <div>
-        <h1>FORMULARIO DE CONTACTO</h1>
-        <h4>Envíanos tus datos y recibe un cupón del mes, además
-            te mantendremos al día con nuestras promociones.</h4>
+        <h1 class="text-center text-uppercase text-secondary mb-0">FORMULARIO DE CONTACTO</h1>
+        <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+        <h4>
+            <b>Envíanos tus datos y recibe un cupón del mes, además
+            te mantendremos al día con nuestras promociones.</b></h4>
         <form class="formularioContacto">
             <p id="nombre">
-                <label>Nombre: </label>
-                <input type="text">
+                <label><b>Nombre: </b></label>
+                <br/>
+                <input type="text" name="nombre" size="40">
             </p>
 
-            <p id="dirección">
-                <label>Dirección de Correo: </label>
-                <input type="text">
+            <p id="correo">
+                <label> <b>
+                    Dirección de Correo:</b> </label>
+                    <br/>
+                <input type="text" name="correo" size="40">
             </p>
             <p id="Teléfono">
-                <label>Teléfono: </label>
-                <input type="text">
-            </p>
-            <p id="Ciudad">
-                <label>Ciudad: </label>
-                <input type="text">
+                <label>
+                    <b>Teléfono: </b></label>
+                    <br/>
+                <input type="text" name="telefono" size="10" maxlength="9">
             </p>
             <p id="Mensaje">
-                <label>Mensaje: </label>
-                <input type="text">
+                <label>
+                    <b>Mensaje:</b></label>
+                    <br/>
+                <textarea name="mensaje" rows="4" cols="43"></textarea>
             </p>
-            <div id="botonIngreso">
+            <div class="enviarFormulario">
                 <button type="submit">
                     Enviar Mensaje
                 </button>
