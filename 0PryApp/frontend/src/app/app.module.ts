@@ -15,7 +15,7 @@ import { PromocionesComponent } from './promociones/promociones.component';
     AppComponent,
   
     MenuComponent,
-        PromocionesComponent,
+    PromocionesComponent,
    
   ],
   imports: [

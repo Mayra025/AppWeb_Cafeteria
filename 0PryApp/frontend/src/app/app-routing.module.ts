@@ -1,6 +1,8 @@
 import { NgModule } from "@angular/core";
 import {RouterModule,Routes} from "@angular/router";
 import { MenuComponent } from "./menu/menu.component";
+import { PromocionesComponent } from "./promociones/promociones.component";
+
 
 
 
@@ -10,6 +12,8 @@ import { MenuComponent } from "./menu/menu.component";
 const router:Routes=[
 //Menu
 {path:'Menu',component: MenuComponent},
+{path:'Promociones',component: PromocionesComponent},
+
 {path:'**',component: MenuComponent} //en caso de error 404, no carga
 
 
