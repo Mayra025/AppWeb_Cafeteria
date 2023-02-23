@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit,Renderer2,ViewChild } from '@angular/core';
-import { Registro } from '../models/registro';
+import { Registro } from '../models/usuario';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class RegistroComponent implements OnInit {
   mostrar=false;
 
   constructor() {
-    this.reg = new Registro('', '', '', '', '', '')
+    this.reg = new Registro('', '', '', '', '')
   }
   ngOnInit(): void {
 

@@ -1,3 +1,5 @@
+//Directiva creada para el fondo de imagen de Iniciar Sesión
+
 import { Directive, Renderer2, ElementRef, OnInit } from '@angular/core';
 
 @Directive({

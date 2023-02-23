@@ -1,3 +1,4 @@
-bootstrap, desde el directorio
-
-npm install bootstrap@v5.2.3
+Front:
+    bootstrap, desde el directorio
+    npm install bootstrap@v5.2.3
+    
