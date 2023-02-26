@@ -67,8 +67,11 @@ h2{
     background-color: rgb(165, 128, 73);
 
 }
+
 span{
     font-size: 20px;
+    -webkit-text-stroke: 1px black;
+    color: white;
 }
 
 h4{
@@ -86,7 +89,8 @@ label{
 
 }
 form{
-    margin-left: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 input{
@@ -114,6 +118,10 @@ button {
 .formularioContacto{
     background: url('../../assets/img/fondoContacto.jpg');
 }
+
+
+
+
 
 
 

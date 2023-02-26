@@ -25,15 +25,15 @@
         <p>
             <h2 >Dirección:</h2>
             <a href="#" class="icon">?</a>
-            <span> Selva Alegre Selva Alegre, Y Oe8-255 y, Quito 170521 <br></span>
+            <h5> Selva Alegre Selva Alegre, Y Oe8-255 y, Quito 170521 <br></h5>
 
             <h2>Teléfonos:</h2>
             <a href="#" class="icon">u</a>
-            <span> 1800 486 482 <br></span>
+            <h5> 1800 486 482 <br></h5>
             
             <h2>Correo:</h2>
             <a href="#" class="icon">@</a>
-            <span> info@lacasadelahumita.ec <br></span>   
+            <h5> info@lacasadelahumita.ec <br></h5>   
         <p>
     </div>
 
@@ -53,46 +53,64 @@
 
             <div class="formularioContacto">
                 <br>
-                <br>
-                <form>
-                    <p id="nombre">
-                        <label><b>Nombre: </b></label>
-                        <br/>
-                        <input type="text" name="nombre" size="40">
-                    </p>
-        
-                    <p id="correo">
-                        <label> <b>
-                            Dirección de Correo:</b> </label>
-                            <br/>
-                        <input type="text" name="correo" size="40">
-                    </p>
-                    <p id="Teléfono">
-                        <label>
-                            <b>Teléfono: </b></label>
-                            <br/>
-                        <input type="text" name="telefono" size="10" maxlength="9">
-                    </p>
-                    <p id="Mensaje">
-                        <label>
-                            <b>Mensaje:</b></label>
-                            <br/>
-                        <textarea name="mensaje" rows="4" cols="43"></textarea>
-                    </p>
-                    <div class="enviarFormulario">
-                        <button type="submit">
-                            Enviar Mensaje
-                        </button>
+                <form class="contacto" #formReg="ngForm">
+                    <div class="form-group">
+                        <label for="nombres"> </label>
+                        <input type="text" name="nombres" #nombres="ngModel" [(ngModel)]="reg.nombre" required
+                            pattern="[a-zA-Z]+" class="form-control form-control-user"
+                            placeholder="Nombres y Apellido" />
+                        <span *ngIf="nombres.touched && !nombres.valid">
+                            * Nombre es obligatorio
+                        </span>
                     </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label for="correo"> </label>
+                        <input type="text" name="correo" #correo="ngModel" [(ngModel)]="reg.correo" required
+                            pattern="" class="form-control form-control-user"
+                            placeholder="Ingreso de Correo" />
+                        <span *ngIf="correo.touched && !correo.valid">
+                            * Correo es obligatorio
+                        </span>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label for="telefono"> </label>
+                        <input type="text" name="telefono" #telefono="ngModel" [(ngModel)]="reg.telefono"
+                            required pattern="[0-9]+" class="form-control form-control-user"
+                            placeholder="Teléfono" />
+                        <span *ngIf="telefono.touched && !telefono.valid">
+                            * Teléfono es obligatorio
+                        </span>
+                    </div>
+
+                    <br>
+        
+                    <div class="form-group">
+                        <label for="mensaje"> </label>
+                        <input type="text" name="mensaje" #mensaje="ngModel" [(ngModel)]="reg.mensaje"
+                            required class="form-control form-control-user" placeholder="Mensaje"/>
+                        <span *ngIf="mensaje.touched && !mensaje.valid">
+                            * Campo obligatorio
+                        </span>
+                    </div>
+                    <br>
+                    
+                    <input type="submit" name="Continuar" [disabled]="!formReg.form.valid"
+                    class="btn btn-primary btn-sucess btn-block" value="Continuar" [routerLink]="'/contacto'">
+
                 </form>
 
 
             </div>
 
-        <div id="FraseAlEnviarForm">
-            <p>Gracias por enviar tu opinión, esperamos tu visita
-            </p>
-        </div>
+            <div class="col-lg-2">
+
+            </div>
+
+        
     </div>
 
     
