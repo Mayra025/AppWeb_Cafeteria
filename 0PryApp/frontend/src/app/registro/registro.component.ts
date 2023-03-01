@@ -1,5 +1,7 @@
-import { Component, ElementRef, OnInit,Renderer2,ViewChild } from '@angular/core';
-import { Registro } from '../models/usuario';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Usuario } from '../models/usuario';
+import { NgForm } from '@angular/forms';
+
 
 
 @Component({
@@ -10,12 +12,13 @@ import { Registro } from '../models/usuario';
 
 })
 export class RegistroComponent implements OnInit {
-  public reg: Registro;
+  title: string = 'Regístrate';
+  public reg: Usuario;
 
-  mostrar=false;
+  mostrar = false;
 
   constructor() {
-    this.reg = new Registro('', '', '', '', '')
+    this.reg = new Usuario('', '', '', '', '', '', '')
   }
   ngOnInit(): void {
 

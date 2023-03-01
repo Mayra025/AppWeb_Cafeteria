@@ -6,17 +6,17 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { RegistroComponent } from './registro/registro.component';
 import { CBodyDirective } from './c-body.directive';
-import { UsuarioComponent } from './usuario/usuario.component';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
+    LoginComponent,
     RegistroComponent,
-    CBodyDirective,
-    UsuarioComponent
+    CBodyDirective
   ],
   imports: [
     BrowserModule,

@@ -1,56 +1,16 @@
+<!-- bloquear el iniciar sesión 
+o reemplazarlo por el logout :)-->
+
 <body appCBody>
     <div class="container px-4 px-lg-5">
         <div class="card text-white py-4" style="background-color: transparent;">
             <div class="row gx-4 gx-lg-5 align-items-center " style=" margin: 50px;">
                 <div class="col-lg-5">
 
-                    <h4 class="text-white">Bienvenid@, llena tus datos</h4>
-                    <br>
-                    <form class="user" #formReg="ngForm">
-                        <h5 style="text-align: center;"> Información General</h5>
-                        <div class="form-group">
-                            <input type="text" name="nombres" #nombres="ngModel" [(ngModel)]="reg.nombre" required
-                                pattern="[a-zA-Z]+" class="form-control form-control-user"
-                                placeholder="Nombres Completos" />
-                            <span *ngIf="nombres.touched && !nombres.valid">
-                                * Nombre es obligatorio
-                            </span>
-                        </div>
-
-
-                        <br>
-
-                        <div class="form-group">
-                            <input type="text" name="apellidos" #apellidos="ngModel" [(ngModel)]="reg.apellido" required
-                                pattern="[a-zA-Z]+" class="form-control form-control-user"
-                                placeholder="Apellidos Completos" />
-                            <span *ngIf="apellidos.touched && !apellidos.valid">
-                                * Apellido es obligatorio
-                            </span>
-                        </div>
-                        <br>
-
-                        <div class="form-group">
-                            <input type="text" name="domicilio" #domicilio="ngModel" [(ngModel)]="reg.domicilio"
-                                required class="form-control form-control-user" placeholder="Domicilio" />
-                            <span *ngIf="domicilio.touched && !domicilio.valid">
-                                * Domicilio es obligatorio
-                            </span>
-                        </div>
-                        <br>
-
-                        <div class="form-group">
-                            <input type="text" name="telefono" #telefono="ngModel" [(ngModel)]="reg.telefono" required
-                                pattern="[0-9]+" class="form-control form-control-user" placeholder="Teléfono" />
-                            <span *ngIf="telefono.touched && !telefono.valid">
-                                * Teléfono es obligatorio
-                            </span>
-                        </div>
-                        <br>
-                        <h5 style="text-align: center;"> Credenciales</h5>
-
-                        <div class="form-group">
-                            <input type="text" name="username" #username="ngModel" [(ngModel)]="reg.user" required
+                    <form class="user" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+                        <div id="username" class="form-group">
+                            <label for="username">Usuario</label>
+                            <input type="text" name="username" #username="ngModel" [(ngModel)]="model.user" required
                                 pattern="" class="form-control form-control-user" placeholder="Usuario" />
                             <span *ngIf="username.touched && !username.valid">
                                 * Usuario es obligatorio
@@ -59,7 +19,8 @@
                         <br>
 
                         <div id="password" class="form-group">
-                            <input type="password" name="password" [(ngModel)]="reg.password" #password="ngModel"
+                            <label for="password">Contraseña</label>
+                            <input type="password" name="password" [(ngModel)]="model.password" #password="ngModel"
                                 required class="form-control form-control-user" placeholder="Contraseña" />
                             <span *ngIf="password.touched && !password.valid">
                                 * Contraseña es obligatorio
@@ -67,44 +28,21 @@
                         </div>
                         <br>
 
+                        <div class="form-group">
+                            <input type="submit" value="Guardar" [disabled]="!loginForm.form.valid"
+                                class="btn btn-primary btn-sucess btn-block" [routerLink]="'/usuario'">
+                            <br>
+                            <span *ngIf="status!='success'">Si no tienes una cuenta, <a [routerLink]="'/registro'"
+                                    class="btn btn-link">Registrate!</a></span>
 
-                        <button [disabled]="!formReg.form.valid" class="btn btn-primary btn-sucess btn-block"> Continuar
-                        </button>
-                        <a [routerLink]="['/login']" class="btn btn-link">Cancelar</a>
+
+                        </div>
 
                     </form>
 
-
-                </div>
-
-                <div class="col-lg-2">
-
-                </div>
-
-                <div class="col-lg-5">
-                    <h1 class="font-weight-light">{{title}} :)</h1>
-                    <p>
-                        <br><br>
-                        Para recibir tus facturas, información de <br> promociones y ofertas, registra tu correo.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-</body>
-
-
-<!-- <body appCBody>
-    <div class="container px-4 px-lg-5">
-        <div class="card text-white py-4" style="background-color: transparent;">
-            <div class="row gx-4 gx-lg-5 align-items-center " style=" margin: 50px;">
-                <div class="col-lg-5">
-
-
+                    <!--                     
                     <form class="user" #formReg="ngForm">
+
                         <div id="correo" class="form-group">
                             <label for="correo">Correo</label>
                             <input type="text" name="correo" #correo="ngModel" [(ngModel)]="reg.correo" required
@@ -180,7 +118,7 @@
 
 
                         </form>
-                    </div>
+                    </div> -->
 
 
                 </div>
@@ -190,7 +128,7 @@
                 </div>
 
                 <div class="col-lg-5">
-                    <h1 class="font-weight-light">Registrate :)</h1>
+                    <h1 class="font-weight-light">{{title}} :)</h1>
                     <p>
                         <br><br>
                         Para recibir tus facturas, información de <br> promociones y ofertas, registra tu correo.
@@ -202,4 +140,62 @@
         </div>
     </div>
 
-</body> -->
+</body>
+
+
+<!-- 
+
+<h4>Iniciar sesión :)</h4>
+
+<div class="container">
+    <div class="message success" *ngIf="status=='success'" style="width: 250px; height: 100px;">
+        Bienvenid@
+        <br>
+        <br>
+        <button (click)='logout()'> Salir </button>
+    </div>
+    <div class="message failed" *ngIf="status=='failed'" style="width: 250px; ">
+        Credenciales erróneas o inexistentes
+    </div>
+
+    <div *ngIf="status!='success'">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <label for="username">Username</label>
+            <input type="text" name="username" #username="ngModel" [(ngModel)]="model.user" required
+                style="width: 190px; height: 10px;" />
+            <span *ngIf="username.touched && !username.valid">
+                Nombre obligatorio
+            </span>
+            <br>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" [(ngModel)]="model.password" #password="ngModel" required
+                    style="width: 200px; height: 20px;" />
+                <span *ngIf="password.touched && !password.valid">
+                    Contraseña obligatorio
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" [disabled]="!loginForm.form.valid">
+
+                <ul [ngSwitch]="status" style="list-style: none;">
+                    <li *ngSwitchCase="'failed'">
+                        <span>Si no tienes una cuenta, <a routerLink="../registro"
+                                class="btn btn-link">Registrate!</a></span>
+                    </li>
+
+                    <li *ngSwitchCase="''">
+                        <span>Si no tienes una cuenta, <a routerLink="../registro"
+                                class="btn btn-link">Registrate!</a></span>
+                    </li>
+
+                </ul>
+            </div>
+
+        </form>
+    </div>
+    <br>
+
+</div>
+ -->

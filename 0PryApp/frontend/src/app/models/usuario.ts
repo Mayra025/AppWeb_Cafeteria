@@ -1,11 +1,14 @@
-export class Registro {
+export class Usuario {
     constructor(
-        public correo: string,
-       // public id: string,
+        public user: string,
+        public password: string,
+
+        // public id: string,
         public nombre: string,
         public apellido: string,
+        public domicilio: string,
         public telefono: string,
-        public domicilio: string
+        public correo: string,
 
     ) { }
 }

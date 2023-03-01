@@ -2,16 +2,19 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { InicioComponent } from "./inicio/inicio.component";
 import { RegistroComponent } from "./registro/registro.component";
-import { UsuarioComponent } from "./usuario/usuario.component";
+//import { UsuarioComponent } from "./usuario/usuario.component";
+import { LoginComponent } from "./login/login.component";
 
 
 //array de rutas
 const router: Routes = [
     { path: 'inicio', component: InicioComponent },
+    //{ path: 'usuario', component: UsuarioComponent },
+    { path: 'login', component: LoginComponent },
     { path: 'registro', component: RegistroComponent },
-    { path: 'usuario', component: UsuarioComponent },
 
-    { path: '**', component: InicioComponent } //en caso de error 404, no carga
+
+    //   { path: '**', component: InicioComponent } //en caso de error 404, no carga
 
 ];
 
