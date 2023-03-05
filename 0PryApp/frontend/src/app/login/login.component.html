@@ -6,7 +6,11 @@ o reemplazarlo por el logout :)-->
         <div class="card text-white py-4" style="background-color: transparent;">
             <div class="row gx-4 gx-lg-5 align-items-center " style=" margin: 50px;">
                 <div class="col-lg-5">
-
+                    <div *ngIf="error!==''"
+                        style="background-color: rgb(241, 105, 105); display: flex; align-items: center;">
+                        <p style="margin: 5px 10px; padding: 5px 10px; color: white; border-left: 2.5px solid white;">
+                            Error: {{error}}</p>
+                    </div>
                     <form class="user" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
                         <div id="username" class="form-group">
                             <label for="username">Usuario</label>
@@ -24,6 +28,20 @@ o reemplazarlo por el logout :)-->
                                 required class="form-control form-control-user" placeholder="Contraseña" />
                             <span *ngIf="password.touched && !password.valid">
                                 * Contraseña es obligatorio
+                            </span>
+                        </div>
+                        <br>
+
+                        <div class="form-group">
+                            <label for="password">Rol</label>
+                            <select class="form-control form-control-user" type="text" name="rol" #rol="ngModel"
+                                [(ngModel)]="model.rol" required pattern="(empleado|cliente)">
+                                <option value="" disabled selected>Elige una opción &dtrif; </option>
+                                <option value="cliente">Cliente</option>
+                                <option value="empleado">Empleado</option>
+                            </select>
+                            <span *ngIf="rol.touched && !rol.valid">
+                                * El rol es obligatorio
                             </span>
                         </div>
                         <br>

@@ -1,3 +1,5 @@
+//solo hay registro de Cliente
+
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Usuario } from '../models/usuario';
 import { NgForm } from '@angular/forms';
@@ -18,7 +20,7 @@ export class RegistroComponent implements OnInit {
   mostrar = false;
 
   constructor() {
-    this.reg = new Usuario('', '', '', '', '', '', '')
+    this.reg = new Usuario('', '', 'cliente', '', '', '', '', '')
   }
   ngOnInit(): void {
 

@@ -3,12 +3,14 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var UsuarioSchema = Schema({
-
+    user: String,
+    password: String,
+    rol: String,
     nombre: String,
-    apellido:String,
+    apellido: String,
     domicilio: String,
-    telefono:String,
-    correo:String,
+    telefono: String,
+    correo: String,
 
     //password: String,
 });
