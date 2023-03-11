@@ -1,10 +1,10 @@
-export class Contacto {
+export class Contacto{
     constructor(
-        
-        public nombre: string,
-        public correo: string,
-        public telefono: string,
-        public mensaje: string
-
-    ) { }
+        public _id:string,
+        public nombre:String,
+        public apellido:String,
+        public telefono:String,
+        public email:String,
+        public mensaje:String
+    ){}
 }

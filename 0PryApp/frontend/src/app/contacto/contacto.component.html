@@ -40,84 +40,75 @@
     <!-- Formulario de Contacto-->
 
     <div class="formulario">
-        <h1 class="text-center text-uppercase text-secondary mb-0">FORMULARIO DE CONTACTO</h1>
+            <h1 class="text-center text-uppercase text-secondary mb-0">FORMULARIO DE CONTACTO</h1>
         <!-- Icon Divider-->
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-        <h4>
+            <h4>
             <b>Envíanos tus datos y recibe un cupón del mes, además
             te mantendremos al día con nuestras promociones.</b></h4>
 
             <div class="formularioContacto">
                 <br>
-                <form class="contacto" #formReg="ngForm">
-                    <div class="form-group">
-                        <label for="nombres"> </label>
-                        <input type="text" name="nombres" #nombres="ngModel" [(ngModel)]="reg.nombre" required
-                            pattern="[a-zA-Z]+" class="form-control form-control-user"
-                            placeholder="Nombres y Apellido" />
-                        <span *ngIf="nombres.touched && !nombres.valid">
-                            * Nombre es obligatorio
+                            <h2>{{titulo}}</h2>
+                <form #contactoForm="ngForm" (ngSubmit)="guardarContacto(contactoForm)">
+                    <p>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre" required>
+                        <span *ngIf="nombre.touched && !nombre.valid">
+                            Ingrese su nombre
                         </span>
-                    </div>
-                    <br>
-
-                    <div class="form-group">
-                        <label for="correo"> </label>
-                        <input type="text" name="correo" #correo="ngModel" [(ngModel)]="reg.correo" required
-                            pattern="" class="form-control form-control-user"
-                            placeholder="Ingreso de Correo" />
-                        <span *ngIf="correo.touched && !correo.valid">
-                            * Correo es obligatorio
+                    </p>
+                    <p>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" #apellido="ngModel" [(ngModel)]="contacto.apellido" required>
+                        <span *ngIf="apellido.touched && !apellido.valid">
+                            Ingrese su apellido
                         </span>
-                    </div>
-                    <br>
-
-                    <div class="form-group">
-                        <label for="telefono"> </label>
-                        <input type="text" name="telefono" #telefono="ngModel" [(ngModel)]="reg.telefono"
-                            required pattern="[0-9]+" class="form-control form-control-user"
-                            placeholder="Teléfono" />
+                    </p>
+                    <p>
+                        <label for="telefono">Teléfono</label>
+                        <input type="text" name="apellido" #telefono="ngModel" [(ngModel)]="contacto.telefono" required>
                         <span *ngIf="telefono.touched && !telefono.valid">
-                            * Teléfono es obligatorio
+                            Ingrese un teléfono
                         </span>
-                    </div>
-
-                    <br>
-        
-                    <div class="form-group">
-                        <label for="mensaje"> </label>
-                        <input type="text" name="mensaje" #mensaje="ngModel" [(ngModel)]="reg.mensaje"
-                            required class="form-control form-control-user" placeholder="Mensaje"/>
+                    </p>
+                    <p>
+                        <label for="email">Email o Correo</label>
+                        <input type="text" name="email" #email="ngModel" [(ngModel)]="contacto.email" required>
+                        <span *ngIf="email.touched && !email.valid">
+                        Ingrese su email o correo
+                        </span>
+                    </p>
+                    <p>
+                        <label for="mensaje">Mensaje</label>
+                        <input type="text" name="mensaje" #mensaje="ngModel" [(ngModel)]="contacto.mensaje" required>
                         <span *ngIf="mensaje.touched && !mensaje.valid">
-                            * Campo obligatorio
+                            Ingrese su mensaje
                         </span>
-                    </div>
-                    <br>
-                    
-                    <input type="submit" name="Continuar" [disabled]="!formReg.form.valid"
-                    class="btn btn-primary btn-sucess btn-block" value="Continuar" [routerLink]="'/contacto'">
-
+                    </p>
+                    <input type="submit" value="Guardar" [disabled]="!contactoForm.form.valid">
                 </form>
 
+                <div class="message success" *ngIf="status=='success'">
+                    Su mensaje ha sido envido
+                </div>
+
+                <div class="message failed" *ngIf="status=='failed'">
+                    no se envio wey
+                </div>
 
             </div>
 
             <div class="col-lg-2">
 
-            </div>
+        </div>
 
         
     </div>
-
-    
-
-    
-
-
 
 </div>
     
