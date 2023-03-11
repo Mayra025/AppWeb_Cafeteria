@@ -4,8 +4,9 @@
 
  var ContactosSchema=Schema({
      nombre:String,
-     email:String,
+     apellido:String,
      telefono:String,
+     email:String,
      mensaje:String
  });
- module.exports=mongoose.model('contactos',ContactosSchema);
+ module.exports=mongoose.model('contacto',ContactosSchema);
