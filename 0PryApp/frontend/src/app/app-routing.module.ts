@@ -14,7 +14,7 @@ const router: Routes = [
     //{ path: 'usuario', component: UsuarioComponent },
     { path: 'login', component: LoginComponent },
     { path: 'registro', component: RegistroComponent },
-    { path: 'usuario', component: UsuarioComponent },
+   // { path: 'usuario', component: UsuarioComponent },
     { path: 'pedido', component: PedidoComponent },
     { path: 'contacto', component: ContactoComponent },    
 

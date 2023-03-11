@@ -73,6 +73,7 @@ export class LoginComponent {
 
       },
         error => {
+          this.error='error';
           this.status = 'failed';
           console.log(<any>error);
         }

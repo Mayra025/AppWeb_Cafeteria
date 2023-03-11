@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CBodyDirective } from './c-body.directive';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
-import { UsuarioComponent } from './usuario/usuario.component';
+//import { UsuarioComponent } from './usuario/usuario.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { ContactoComponent } from './contacto/contacto.component';
 
@@ -21,7 +21,7 @@ import { ContactoComponent } from './contacto/contacto.component';
     RegistroComponent,
     
     CBodyDirective,
-    UsuarioComponent,
+   // UsuarioComponent,
     PedidoComponent,
     ContactoComponent
   ],
