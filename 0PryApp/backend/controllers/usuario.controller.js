@@ -21,8 +21,7 @@ var controller = {
         usuario.apellido = params.apellido;
         usuario.domicilio = params.domicilio;
         usuario.telefono = params.telefono;
-        usuario.correo = params.correo;
-
+        
         usuario.save((err, usuarioGuardado) => {
             if (err) return res.status(500).send({ message: 'Error al guardar' });
             if (!usuarioGuardado) return res.status(404).send({ message: 'No se ha guardado el usuario' });

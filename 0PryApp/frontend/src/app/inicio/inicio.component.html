@@ -87,7 +87,7 @@
                 <br> <br> Además, contamos con un variado menú en Bebidas,
                 Pastelería, Comida y más.
             </p>
-            <a class="btn btn-sucess text-bold" href="#!">Revisar menú!</a>
+            <a class="btn btn-sucess text-bold" [routerLink]="'/Menu'">Revisar menú!</a>
         </div>
     </div>
 
@@ -100,7 +100,7 @@
         <div class="divider-custom-line"></div>
     </div>
 
-    <p style="text-align: center;"> Para recibir más información sobre menú y promociones déjanos tu correo.
+    <p style="text-align: center;"> Agrega tu e-mail para recibir más información sobre menú, promociones y descuentos.
     </p>
 
     <!-- Call to Action-->
@@ -118,22 +118,20 @@
                             <span *ngIf="nombreC.touched && !nombreC.valid">
                                 * Este campo es obligatorio
                             </span>
-                        </div>
+                        </div> -->
 
-                        <br>
                         <div class="form-group">
                             <label for="correo">Correo</label>
                             <input type="text" name="correo" #correo="ngModel" [(ngModel)]="info.correo" required
-                                pattern="" class="form-control form-control-user" placeholder="Correo" />
+                                pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" class="form-control form-control-user"
+                                placeholder="Correo ..." />
                             <span *ngIf="correo.touched && !correo.valid">
-                                * Correo es obligatorio
+                                * Correo es obligatorio, de formato válido
                             </span>
-
                         </div>
                         <br>
-
                         <input type="submit" name="Enviar" [disabled]="!formInfo.form.valid"
-                            class="btn btn-primary btn-sucess btn-block"> -->
+                            class="btn btn-sucess text-bold btn-block" (click)="enviar(formInfo)"> 
                     </form>
                 </div>
             </div>
@@ -142,7 +140,8 @@
 
 
 
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Realiza tú pedido aquí!</h2>
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" [routerLink]="'/pedido'">Realiza tú
+        pedido <u> aquí! </u> </h2>
     <!-- Icon Divider-->
     <div class="divider-custom">
         <div class="divider-custom-line"></div>

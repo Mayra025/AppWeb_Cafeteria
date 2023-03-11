@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit,Renderer2,ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Informacion } from '../models/informacion';
 
 @Component({
@@ -11,9 +12,14 @@ export class InicioComponent implements OnInit {
 
 
   constructor() {
-    this.info = new Informacion('', '')
+    this.info = new Informacion('')
   }
   ngOnInit(): void {
+
+  }
+  enviar(frm:NgForm){
+    alert('Correo enviado!')
+    frm.resetForm()
 
   }
 }

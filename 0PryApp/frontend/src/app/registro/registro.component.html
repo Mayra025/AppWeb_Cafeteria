@@ -4,9 +4,21 @@
             <div class="row gx-4 gx-lg-5 align-items-center " style=" margin: 50px;">
                 <div class="col-lg-5">
 
-                    <h4 class="text-white">Cliente, llena tus datos</h4>
+                    <h4 class="text-white"> <u>Cliente</u>, llena tus datos:</h4>
                     <br>
-                    <form class="user" #formReg="ngForm">
+
+                    <div *ngIf="error!==''"
+                        style="background-color: rgb(233, 32, 32); display: flex; align-items: center;">
+                        <p style="margin: 5px 10px; padding: 5px 10px; color: white; border-left: 2.5px solid white;">
+                            Error: {{error}}</p>
+                    </div>
+                    <div *ngIf="success!==''"
+                        style="background-color: rgb(5, 148, 0); display: flex; align-items: center;">
+                        <p style="margin: 5px 10px; padding: 5px 10px; color: white; border-left: 2.5px solid white;">
+                            Muy bien: {{success}}</p>
+                    </div>
+
+                    <form class="user" #formReg="ngForm" (ngSubmit)="registro(formReg)">
                         <h5 style="text-align: center;"> Información General</h5>
                         <div class="form-group">
                             <input type="text" name="nombres" #nombres="ngModel" [(ngModel)]="reg.nombre" required

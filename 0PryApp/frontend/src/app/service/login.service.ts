@@ -21,11 +21,13 @@ export class LoginService {
         // headers.append('Content-Type', 'application/x-www-form-urlencoded');
         return this._http.post(this.url + 'login', params, { headers: headers });
     }
-    // login(credentials: any): Observable<any> {
-    //     let params = JSON.stringify(credentials);
-    //     let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    //     return this._http.post(this.url + 'login', params, { headers: headers, withCredentials: true });
-    // }
+
+    //post : http://localhost:3600/create-user
+    create(user: Usuario): Observable<any> {
+        let params = JSON.stringify(user);
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.post(this.url + 'create-user', params, { headers: headers });
+    }
 
     logout(): Observable<any> {
         let headers = new HttpHeaders().set('Content-Type', 'application/json');

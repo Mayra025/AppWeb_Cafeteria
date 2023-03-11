@@ -48,97 +48,12 @@ o reemplazarlo por el logout :)-->
 
                         <div class="form-group">
                             <input type="submit" value="Guardar" [disabled]="!loginForm.form.valid"
-                                class="btn btn-primary btn-sucess btn-block" [routerLink]="'/usuario'">
+                                class="btn btn-sucess text-bold btn-block">
                             <br>
                             <span *ngIf="status!='success'">Si no tienes una cuenta, <a [routerLink]="'/registro'"
                                     class="btn btn-link">Registrate!</a></span>
-
-
-                        </div>
-
-                    </form>
-
-                    <!--                     
-                    <form class="user" #formReg="ngForm">
-
-                        <div id="correo" class="form-group">
-                            <label for="correo">Correo</label>
-                            <input type="text" name="correo" #correo="ngModel" [(ngModel)]="reg.correo" required
-                                pattern="" class="form-control form-control-user" placeholder="Correo" />
-                            <span *ngIf="correo.touched && !correo.valid">
-                                * Correo es obligatorio
-                            </span>
-
-                            <br>
-                            <button (click)="mostrar=true" [disabled]="!formReg.form.valid"
-                                class="btn btn-primary btn-sucess btn-block"> Continuar </button>
-
                         </div>
                     </form>
-
-                    <div *ngIf="mostrar">
-                        <br>
-                        <button (click)="mostrar=false" class="btn btn-sucess"> Ocultar </button>
-                        <br> <br>
-
-                        <h4 class="text-white">Bienvenid@, llena tus datos</h4>
-
-                        <form class="user" #formReg="ngForm">
-                            <div class="form-group">
-                                <label for="nombres">Nombres Completos</label>
-                                <input type="text" name="nombres" #nombres="ngModel" [(ngModel)]="reg.nombre" required
-                                    pattern="[a-zA-Z]+" class="form-control form-control-user"
-                                    placeholder="Nombres Completos" />
-                                <span *ngIf="nombres.touched && !nombres.valid">
-                                    * Nombre es obligatorio
-                                </span>
-                            </div>
-
-
-                            <br>
-
-                            <div class="form-group">
-                                <label for="apellidos">Apellidos Completos</label>
-                                <input type="text" name="apellidos" #apellidos="ngModel" [(ngModel)]="reg.apellido"
-                                    required pattern="[a-zA-Z]+" class="form-control form-control-user"
-                                    placeholder="Apellidos Completos" />
-                                <span *ngIf="apellidos.touched && !apellidos.valid">
-                                    * Apellido es obligatorio
-                                </span>
-                            </div>
-                            <br>
-
-                            <div class="form-group">
-                                <label for="domicilio">Domicilio</label>
-                                <input type="text" name="domicilio" #domicilio="ngModel" [(ngModel)]="reg.domicilio"
-                                    required class="form-control form-control-user" placeholder="Domicilio" />
-                                <span *ngIf="domicilio.touched && !domicilio.valid">
-                                    * Domicilio es obligatorio
-                                </span>
-                            </div>
-                            <br>
-
-                            <div class="form-group">
-                                <label for="telefono">Teléfono</label>
-                                <input type="text" name="telefono" #telefono="ngModel" [(ngModel)]="reg.telefono"
-                                    required pattern="[0-9]+" class="form-control form-control-user"
-                                    placeholder="Teléfono" />
-                                <span *ngIf="telefono.touched && !telefono.valid">
-                                    * Teléfono es obligatorio
-                                </span>
-                            </div>
-                            <br>
-
-
-                            <input type="submit" name="Continuar" [disabled]="!formReg.form.valid"
-                                class="btn btn-primary btn-sucess btn-block" value="Continuar"
-                                [routerLink]="'/usuario'">
-
-
-                        </form>
-                    </div> -->
-
-
                 </div>
 
                 <div class="col-lg-2">
@@ -159,61 +74,3 @@ o reemplazarlo por el logout :)-->
     </div>
 
 </body>
-
-
-<!-- 
-
-<h4>Iniciar sesión :)</h4>
-
-<div class="container">
-    <div class="message success" *ngIf="status=='success'" style="width: 250px; height: 100px;">
-        Bienvenid@
-        <br>
-        <br>
-        <button (click)='logout()'> Salir </button>
-    </div>
-    <div class="message failed" *ngIf="status=='failed'" style="width: 250px; ">
-        Credenciales erróneas o inexistentes
-    </div>
-
-    <div *ngIf="status!='success'">
-        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-            <label for="username">Username</label>
-            <input type="text" name="username" #username="ngModel" [(ngModel)]="model.user" required
-                style="width: 190px; height: 10px;" />
-            <span *ngIf="username.touched && !username.valid">
-                Nombre obligatorio
-            </span>
-            <br>
-
-            <div>
-                <label for="password">Password</label>
-                <input type="password" name="password" [(ngModel)]="model.password" #password="ngModel" required
-                    style="width: 200px; height: 20px;" />
-                <span *ngIf="password.touched && !password.valid">
-                    Contraseña obligatorio
-                </span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Guardar" [disabled]="!loginForm.form.valid">
-
-                <ul [ngSwitch]="status" style="list-style: none;">
-                    <li *ngSwitchCase="'failed'">
-                        <span>Si no tienes una cuenta, <a routerLink="../registro"
-                                class="btn btn-link">Registrate!</a></span>
-                    </li>
-
-                    <li *ngSwitchCase="''">
-                        <span>Si no tienes una cuenta, <a routerLink="../registro"
-                                class="btn btn-link">Registrate!</a></span>
-                    </li>
-
-                </ul>
-            </div>
-
-        </form>
-    </div>
-    <br>
-
-</div>
- -->

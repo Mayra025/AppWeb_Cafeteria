@@ -1,16 +1,16 @@
-//2
-'use strict'
-var express = require('express');
-var router = express.Router();
-var usuariosController = require('../controllers/usuario.controller');
+// //2
+// 'use strict'
+// var express = require('express');
+// var router = express.Router();
+// var usuariosController = require('../controllers/usuario.controller');
 
-//para las img
-var multiparty = require('connect-multiparty');
-var multipartyMiddleWare = multiparty({ uploadDir: './uploads' });
+// //para las img
+// var multiparty = require('connect-multiparty');
+// var multipartyMiddleWare = multiparty({ uploadDir: './uploads' });
 
 
 //pagina Inicio
-router.get('/inicio', usuariosController.inicio); //llamando a ese archivo
+// router.get('/inicio', usuariosController.inicio); //llamando a ese archivo
 //guardar libro
 // router.post('/guardar-libro', usuariosController.saveLibro);
 
@@ -34,12 +34,12 @@ router.get('/inicio', usuariosController.inicio); //llamando a ese archivo
 // router.get('/get-imagen/:imagen', librosController.getImagen);
 
 ///Para Usuario-Sesiones
-var usuarioController = require('../controllers/usuario.controller');
+// var usuarioController = require('../controllers/usuario.controller');
 
-router.post('/create-user', usuarioController.saveUsuario);
-router.post('/login', usuarioController.login);
-router.get('/logout', usuarioController.logout);
+// router.post('/create-user', usuarioController.saveUsuario);
+// router.post('/login', usuarioController.login);
+// router.get('/logout', usuarioController.logout);
 
 
 
-module.exports = router;
+// module.exports = router;
