@@ -7,6 +7,8 @@ import { RegistroComponent } from "./registro/registro.component";
 //import { UsuarioComponent } from "./usuario/usuario.component";
 import { LoginComponent } from "./login/login.component";
 
+import { MenuComponent } from "./menu/menu.component";
+import { PromocionesComponent } from "./promociones/promociones.component";
 
 //array de rutas
 const router: Routes = [
@@ -14,12 +16,16 @@ const router: Routes = [
     //{ path: 'usuario', component: UsuarioComponent },
     { path: 'login', component: LoginComponent },
     { path: 'registro', component: RegistroComponent },
-   // { path: 'usuario', component: UsuarioComponent },
+    // { path: 'usuario', component: UsuarioComponent },
     { path: 'pedido', component: PedidoComponent },
-    { path: 'contacto', component: ContactoComponent },    
+    { path: 'contacto', component: ContactoComponent },
 
+    //Menu
+    { path: 'Menu', component: MenuComponent },
+    { path: 'Promociones', component: PromocionesComponent },
 
-    //   { path: '**', component: InicioComponent } //en caso de error 404, no carga
+    { path: '**', component: MenuComponent } //en caso de error 404, no carga
+
 
 ];
 
