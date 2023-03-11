@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit,Renderer2,ViewChild } from '@angular/core';
 import { Informacion } from '../models/informacion';
 
 @Component({

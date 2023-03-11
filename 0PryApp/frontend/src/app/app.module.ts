@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { MenuComponent } from './menu/menu.component';
 import { PromocionesComponent } from './promociones/promociones.component';
 
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,6 +35,8 @@ import { PromocionesComponent } from './promociones/promociones.component';
    
   ],
   imports: [
+    FormsModule,
+    
     BrowserModule,
     AppRoutingModule, //para el modulo de rutas
     HttpClientModule,
