@@ -43,7 +43,8 @@ app.get('/', (req, res) => {
 })
 */
 app.use('/', usuarioRoutes) //archivo externo de todas las rutas
-// module.exports = app;
+module.exports = app;
+
 // var express=require('express');
 // var bodyParser=require('body-parser');
 // var app=express();
@@ -64,3 +65,4 @@ app.use('/', usuarioRoutes) //archivo externo de todas las rutas
 // app.use('/',cafeteriaRoutes);
 
 // module.exports=app;
+// >>>>>>> Dome
