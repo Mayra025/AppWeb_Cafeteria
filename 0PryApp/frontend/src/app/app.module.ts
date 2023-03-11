@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CBodyDirective } from './c-body.directive';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { PedidoComponent } from './pedido/pedido.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,11 @@ import { RegistroComponent } from './registro/registro.component';
     InicioComponent,
     LoginComponent,
     RegistroComponent,
-    CBodyDirective
+    
+    CBodyDirective,
+    UsuarioComponent,
+    PedidoComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

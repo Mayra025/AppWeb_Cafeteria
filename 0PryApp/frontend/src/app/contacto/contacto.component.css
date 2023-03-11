@@ -1,0 +1,130 @@
+/*Fuentes personalizadas*/
+@font-face {
+    font-family: "TrebuchetMS";
+    src: url('/0PryApp/frontend/src/assets//fonts/TrebuchetMS.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "BebasNeue";
+    src: url('/0PryApp/frontend/src/assets/fonts/BebasNeue.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "WebSymbolsRegular";
+    src: url('/0PryApp/frontend/src/assets/fonts/websymbols-regular-webfont.eot');
+    src: url('/0PryApp/frontend/src/assets/fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('/0PryApp/frontend/src/assets/fonts/websymbols-regular-webfont.woff') format('woff'),
+        url('/0PryApp/frontend/src/assets/fonts/websymbols-regular-webfont.ttf') format( 'truetype'),
+        url('/0PryApp/frontend/src/assets/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.divider-custom {
+    margin: 1.25rem 0 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divider-custom .divider-custom-line {
+    width: 100%;
+    max-width: 7rem;
+    height: 0.25rem;
+    background-color: #2c3e50;
+    border-radius: 1rem;
+    border-color: #2c3e50;
+}
+
+.divider-custom .divider-custom-line:first-child {
+    margin-right: 1rem;
+}
+
+.divider-custom .divider-custom-line:last-child {
+    margin-left: 1rem;
+}
+
+.divider-custom .divider-custom-icon {
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.divider-custom.divider-light .divider-custom-line {
+    background-color: #fff;
+}
+
+.divider-custom.divider-light .divider-custom-icon {
+    color: #fff;
+}
+
+h2{
+    color: #edf0f3;
+    font-size: 25px;
+    background-color: rgb(165, 128, 73);
+
+}
+
+span{
+    font-size: 20px;
+    -webkit-text-stroke: 1px black;
+    color: white;
+}
+
+h4{
+    font-family: 'BebasNeue';
+    color: #4CAF50;
+    font-size: 17.5px;
+    text-shadow: 0px 1px 0px black;
+    text-align: center;
+}
+
+label{
+    font-family: 'TrebuchetMS';
+    font-size: 19px;
+    color: white;
+
+}
+form{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+input{
+    text-align: left;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+#FraseAlEnviarForm {
+    font-size: 20px;
+    color: #4CAF50;
+}
+
+.formularioContacto{
+    background: url('../../assets/img/fondoContacto.jpg');
+}
+
+
+
+
+
+
+
+
+
+
