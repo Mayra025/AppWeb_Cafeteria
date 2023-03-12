@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Contacto } from '../models/contacto';
 import { Plato } from '../models/plato'
 import { Observable } from 'rxjs';
-import { Global } from './global';
+import { Global } from '../service/global';
 
 @Injectable()
 export class CafeteriaService {

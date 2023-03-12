@@ -21,7 +21,6 @@
             </thead>
             <tbody>
               <tr *ngFor="let plato of platos">
-                
                 <td [routerLink]="['/plato',plato._id]" >{{ plato.imagen }}</td>
                 <td [routerLink]="['/plato',plato._id]" >{{ plato.nombre }}</td>
                 <td [routerLink]="['/plato',plato._id]">{{ plato.precio }}</td>

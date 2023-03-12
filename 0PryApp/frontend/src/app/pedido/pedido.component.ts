@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CafeteriaService } from 'src/app/service/cafeteria.services';
+import { CafeteriaService } from '../service/cafeteria.services';
 import { Plato } from '../models/plato';
 import { Global } from '../service/global';
-import { DataTablesModule } from 'angular-datatables';
-import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
 @Component({
