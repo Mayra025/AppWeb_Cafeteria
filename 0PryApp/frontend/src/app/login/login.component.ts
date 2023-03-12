@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Usuario } from '../models/usuario';
 import { LoginService } from '../service/login.service';
@@ -18,6 +18,7 @@ export class LoginComponent {
   title: String = 'Iniciar sesión';
 
   public error: string
+  // @Output('msj') msj = new EventEmitter<boolean>();
 
 
   constructor(
@@ -30,12 +31,31 @@ export class LoginComponent {
     this.error = '';
   }
 
+
+  // log() {
+  //   this.msj.emit(true);
+  // }
+
   login(frm: NgForm) {
+
     this.loginService.login(this.model.user, this.model.password, this.model.rol)
       .subscribe(res => {
         this.status = 'success';
         console.log(res);
-        frm.reset();
+
+
+        switch (frm.value.rol) {
+          case "cliente":
+            // this.router.navigate(['/cliente']);
+            break;
+          case "empleado":
+            this.router.navigate(['/empleado']);
+            break;
+          default:
+            break;
+        }
+        // frm.reset();
+
       },
         error => {
           this.error = error.error.message;
@@ -44,15 +64,6 @@ export class LoginComponent {
         }
 
       );
-  }
-  logout() {
-    /*
-        this.cuentaService.logout().subscribe(res => {
-          console.log(res);
-          window.location.reload();
-    
-        });
-    */
   }
 
 

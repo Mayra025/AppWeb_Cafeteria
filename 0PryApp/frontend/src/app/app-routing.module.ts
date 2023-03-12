@@ -5,9 +5,11 @@ import { InicioComponent } from "./inicio/inicio.component";
 import { PedidoComponent } from "./pedido/pedido.component";
 import { RegistroComponent } from "./registro/registro.component";
 import { LoginComponent } from "./login/login.component";
-
 import { MenuComponent } from "./menu/menu.component";
 import { PromocionesComponent } from "./promociones/promociones.component";
+import { EmpleadoComponent } from "./empleado/empleado.component";
+const empleadoModule = () => import('./empleado/empleado.module').then(x => x.EmpleadoModule);
+// const clienteModule = () => import('./clientes/clientes.module').then(x => x.ClientesModule);
 
 //array de rutas
 const router: Routes = [
@@ -16,11 +18,15 @@ const router: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'pedido', component: PedidoComponent },
   { path: 'contacto', component: ContactoComponent },
-
-  //Menu
   { path: 'Menu', component: MenuComponent },
   { path: 'Promociones', component: PromocionesComponent },
+  // { path: '**', component: InicioComponent },
 
+  { path: 'empleado', component: EmpleadoComponent },
+  { path: 'empleado', loadChildren: empleadoModule },
+
+  // { path: 'cliente', component: ClientesComponent },
+  // { path: 'cliente', loadChildren: clienteModule },
 ];
 
 //modulo de rutas, y agregar al app.module

@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-//const loginModule = () => import('./login/login.module').then(x => x.LoginModule);
+import { EcrearComponent } from './crear/ecrear.component';
 
 const routes: Routes = [
 
-//solo rutas, no el empleado componete
-
-    // { path: 'login', component: LoginComponent },
+    //solo rutas, no el empleado componete
+    { path: 'ecrear', component: EcrearComponent }
 
 
 ];

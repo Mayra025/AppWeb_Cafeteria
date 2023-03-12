@@ -1,83 +1,106 @@
-<div class="container px-4 px-lg-5">
+<div class="container">
+  <br> <br>
+  <button class="btn btn-primary" (click)="agregar()">
+    + Agregar Producto
+  </button>
 
-    <h2>Perfil</h2>
-    <div class="row gx-4 gx-lg-5 align-items-center " style=" margin: 50px;">
-        <div class="col-lg-5">
-
-
-            <form class="user" #formReg="ngForm">
-
-                <div id="correo" class="form-group">
-                    <label for="correo">Correo</label>
-                    <input type="text" name="correo" #correo="ngModel" [(ngModel)]="reg.correo" required pattern=""
-                        class="form-control form-control-user" placeholder="Correo" />
-                    <span *ngIf="correo.touched && !correo.valid">
-                        * Correo es obligatorio
-                    </span>
+  <div *ngIf="add==true">
+    <app-ecrear (msj)="getR($event)"></app-ecrear>
+  </div>
+  <br> <br>
 
 
-                </div>
+  <h3>Productos Disponibles ♨️</h3>
+  <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table">
+    <thead>
+      <tr>
+        <th style="width: 30%">Producto</th>
+        <th style="width: 30%">Descripción</th>
+        <th style="width: 30%">Precio</th>
+        <th style="width: 10%"></th>
 
-                <div class="form-group">
-                    <label for="nombres">Nombres Completos</label>
-                    <input type="text" name="nombres" #nombres="ngModel" [(ngModel)]="reg.nombre" required
-                        pattern="[a-zA-Z]+" class="form-control form-control-user" placeholder="Nombres Completos" />
-                    <span *ngIf="nombres.touched && !nombres.valid">
-                        * Nombre es obligatorio
-                    </span>
-                </div>
+      </tr>
+    </thead>
+    <tbody>
 
-
-                <br>
-
-                <div class="form-group">
-                    <label for="apellidos">Apellidos Completos</label>
-                    <input type="text" name="apellidos" #apellidos="ngModel" [(ngModel)]="reg.apellido" required
-                        pattern="[a-zA-Z]+" class="form-control form-control-user" placeholder="Apellidos Completos" />
-                    <span *ngIf="apellidos.touched && !apellidos.valid">
-                        * Apellido es obligatorio
-                    </span>
-                </div>
-                <br>
-
-                <div class="form-group">
-                    <label for="domicilio">Domicilio</label>
-                    <input type="text" name="domicilio" #domicilio="ngModel" [(ngModel)]="reg.domicilio" required
-                        class="form-control form-control-user" placeholder="Domicilio" />
-                    <span *ngIf="domicilio.touched && !domicilio.valid">
-                        * Domicilio es obligatorio
-                    </span>
-                </div>
-                <br>
-
-                <div class="form-group">
-                    <label for="telefono">Teléfono</label>
-                    <input type="text" name="telefono" #telefono="ngModel" [(ngModel)]="reg.telefono" required
-                        pattern="[0-9]+" class="form-control form-control-user" placeholder="Teléfono" />
-                    <span *ngIf="telefono.touched && !telefono.valid">
-                        * Teléfono es obligatorio
-                    </span>
-                </div>
-                <br>
+      <tr *ngFor="let producto of productos">
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.descripcion}} </td>
+        <td>$ {{producto.precio}}</td>
+        <td style="white-space: nowrap">
+          <a class="btn btn-success" (click)="editar(producto._id)">
+            Editar
+          </a>
+          <a class="btn btn-danger" (click)="eliminar(producto._id)">
+            Eliminar
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
 
-                <input type="submit" name="Continuar" [disabled]="!formReg.form.valid"
-                    class="btn btn-primary btn-sucess btn-block" value="Continuar">
+  <div *ngIf="edit==true">
+    <div class="card o-hidden border-0 shadow-lg my-5 img-fondo">
+      <div class="card-body p-0">
+        <div class="p-5">
+          <div class="text-center">
+            <h4 class="text-black">Editar Producto  </h4> <br>
+          </div>
+          <span class="text-black text-bold"> Editando: <i> {{productoG._id}}</i> </span> <br>
 
+          <div *ngIf="error!==''" style="background-color: rgb(233, 32, 32); display: flex; align-items: center;">
+            <p style="margin: 5px 10px; padding: 5px 10px; color: white; border-left: 2.5px solid white;">
+              Error: {{error}}</p>
+          </div>
+          <div *ngIf="success!==''" style="background-color: rgb(5, 148, 0); display: flex; align-items: center;">
+            <p style="margin: 5px 10px; padding: 5px 10px; color: white; border-left: 2.5px solid white;">
+              Muy bien: {{success}}</p>
+          </div>
 
-            </form>
+          <br>
+          <form class="user" #form="ngForm" (ngSubmit)="actualizar(form)">
+            <div class="form-group">
+              <span>Nombre del Producto</span>
+              <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="productoG.nombre" required
+                class="form-control form-control-user" placeholder="Nombre del producto" />
+              <span *ngIf="nombre.touched && !nombre.valid">
+                * Nombre de Producto es obligatorio
+              </span>
+              <br>
+            </div>
 
+            <div class="form-group">
+              <span>Descripción del Producto</span>
 
+              <input type="text" name="descripcion" #descripcion="ngModel" [(ngModel)]="productoG.descripcion" required
+                class="form-control form-control-user" placeholder="Descripción" />
+              <span *ngIf="descripcion.touched && !descripcion.valid">
+                * Descripción de producto es obligatorio
+              </span>
+              <br>
+            </div>
 
+            <div class="form-group">
+              <span>Precio unitario del Producto</span>
+
+              <input type="number" step="any" min="1" name="precio" #precio="ngModel" [(ngModel)]="productoG.precio"
+                required class="form-control form-control-user" />
+              <span *ngIf="precio.touched && !precio.valid">
+                * Defina un valor
+              </span>
+              <br>
+            </div>
+
+            <span *ngIf="!form.form.valid" class="text-white"> Recuerde revisar los campos </span>
+            <br>
+            <input type="submit" name="Guardar" value="Guardar" [disabled]="!form.form.valid"
+              class="btn btn-secondary btn-user btn-block">
+            <button class="btn btn-danger" (click)="cerrar()"> Cancelar</button>
+          
+          </form>
         </div>
-
-        <div class="col-lg-2">
-
-        </div>
-
-        <div class="col-lg-5">
-            <img src="assets/img/7.png" alt="" style="width: 350px; height: 350px;">
-        </div>
+      </div>
     </div>
-
+  </div>
 </div>

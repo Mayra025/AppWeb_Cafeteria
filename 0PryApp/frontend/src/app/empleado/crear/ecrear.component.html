@@ -1,0 +1,105 @@
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5 img-fondo">
+        <div class="card-body p-0">
+            <div class="p-5">
+                <div class="text-center">
+                    <h4 class="text-black"> {{title}} Producto</h4>
+                    <br>
+                </div>
+
+                <div *ngIf="error!==''" style="background-color: rgb(233, 32, 32); display: flex; align-items: center;">
+                    <p style="margin: 5px 10px; padding: 5px 10px; color: white; border-left: 2.5px solid white;">
+                        Error: {{error}}</p>
+                </div>
+                <div *ngIf="success!==''" style="background-color: rgb(5, 148, 0); display: flex; align-items: center;">
+                    <p style="margin: 5px 10px; padding: 5px 10px; color: white; border-left: 2.5px solid white;">
+                        Muy bien: {{success}}</p>
+                </div>
+
+                <!-- <span *ngIf="edit==true" class="text-white"> Editando reservación: {{reserva._id}}</span> <br> -->
+
+                <form class="user" #form="ngForm" (ngSubmit)="onSubmit(form)">
+                    <div class="form-group">
+                        <span>Nombre del Producto</span>
+                        <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="producto.nombre" required
+                            class="form-control form-control-user" placeholder="Nombre del producto" />
+                        <span *ngIf="nombre.touched && !nombre.valid">
+                            * Nombre de Producto es obligatorio
+                        </span>
+                        <br>
+                    </div>
+
+                    <div class="form-group">
+                        <span>Descripción del Producto</span>
+
+                        <input type="text" name="descripcion" #descripcion="ngModel" [(ngModel)]="producto.descripcion"
+                            required class="form-control form-control-user" placeholder="Descripción" />
+                        <span *ngIf="descripcion.touched && !descripcion.valid">
+                            * Descripción de producto es obligatorio
+                        </span>
+                        <br>
+                    </div>
+
+                    <div class="form-group">
+                        <span>Precio unitario del Producto</span>
+
+                        <input type="number" step="any" min="1" name="precio" #precio="ngModel"
+                            [(ngModel)]="producto.precio" required class="form-control form-control-user" />
+                        <span *ngIf="precio.touched && !precio.valid">
+                            * Defina un valor
+                        </span>
+                        <br>
+                    </div>
+
+                    <span *ngIf="!form.form.valid" class="text-white"> Recuerde revisar los campos </span>
+                    <br>
+                    <input type="submit" name="Guardar" value="Guardar" [disabled]="!form.form.valid"
+                        class="btn btn-secondary btn-user btn-block">
+                    <button class="btn btn-danger" (click)="cerrar()"> Cancelar</button>
+                    <!-- <div *ngIf="success!==''">
+                        <a (click)="detalle()" class="btn btn-link text-white"> Ver detalle de Reserva </a>
+                    </div> -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div *ngIf="mostrar==true">
+        <div class="card o-hidden border-0 shadow-lg my-5 bg-secondary bg-gradient">
+            <div class="card-body p-0">
+                <div class="p-5">
+
+                    <h4>Detalle de Reserva</h4>
+                    <br>
+                    <div class="data">
+
+                        <h6>Producto: {{reservaG.nombre}}</h6>
+                        <h6>Email: {{reservaG.email}}</h6>
+                        <h6>Servicio: {{reservaG.servicio}}</h6>
+
+                        <p *ngIf="confirm==false">
+                             click()="edit(reservaG._id)   "   "['/aactualizar',reservaG._id]" 
+                            <a (click)="edt(reservaG._id)" class="button-edit text-white">Editar</a>
+                            <br>
+                            <a (click)="setConfirm(true)" class="button-delete text-white">Borrar</a>
+                        </p>
+                        <p *ngIf="confirm==true">
+                            <br>
+                            <span class="confirm text-white" style="background-color: rgb(196, 56, 56);">Estas seguro de
+                                eliminar la reserva?</span><br> <br>
+                            <a (click)="setConfirm(false)" class="button-edit text-white">Cancelar</a>
+                            <br>
+                            <a (click)="borrar(reservaG._id)" class="button-delete text-white">Eliminar
+                                definitivamente</a>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div> -->
+
+</div>
