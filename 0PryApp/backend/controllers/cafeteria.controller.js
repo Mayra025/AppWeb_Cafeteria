@@ -6,35 +6,14 @@ var fs = require('fs');
 const path = require("path");
 
 var controller = {
-    // contacto
-
-    saveContacto: function (req, res) {
-        var contacto = Contacto();
-        var params = req.body;
-
-        //capturando datos
-        contacto.nombre = params.nombre;
-        contacto.apellido = params.apellido;
-        contacto.telefono = params.telefono;
-        contacto.email = params.email;
-        contacto.mesaje = params.mesaje;
-        
-        contacto.save((err, contactoGuardado) => {
-            if (err) return res.status(500).send({ message: 'Erros al guardar' });
-            if (!contactoGuardado) return res.status(404).send({ message: 'No se ha guardao el Evento' });
-            return res.status(200).send({ contacto: contactoGuardado });
-
-        })
-    },
 
     //Platos
 
     getPlatos: function (req, res) {
-        Plato.find({}).sort().exec((err, Platos) => {
+        Plato.find({}).sort().exec((err, platos) => {
             if (err) return res.status(500).send({ message: 'Error al recuperar los datos' });
-            if (!Platos) return res.status(404).send({ message: 'No hay Platos para mostrar' });
-            return res.status(200).send({ Platos });
-
+            if (!platos) return res.status(404).send({ message: 'No hay Platos para mostrar' });
+            return res.status(200).send({ platos });
         })
 
     },
@@ -74,7 +53,6 @@ var controller = {
 
     deletePlato: function (req, res) {
         var platoId = req.params.id;
-
 
         Plato.findByIdAndRemove(platoId, (err, platoBorrado) => {
             if (err) return res.status(500).send({ message: 'Error al borrar los datos' });
@@ -132,7 +110,27 @@ var controller = {
                 res.status(200).send({ message: 'La imagen no existe' });
             }
         })
-    }
+    },
+    // contacto
+
+    saveContacto: function (req, res) {
+        var contacto = Contacto();
+        var params = req.body;
+
+        //capturando datos
+        contacto.nombre = params.nombre;
+        contacto.apellido = params.apellido;
+        contacto.telefono = params.telefono;
+        contacto.email = params.email;
+        contacto.mesaje = params.mesaje;
+        
+        contacto.save((err, contactoGuardado) => {
+            if (err) return res.status(500).send({ message: 'Erros al guardar' });
+            if (!contactoGuardado) return res.status(404).send({ message: 'No se ha guardao el Evento' });
+            return res.status(200).send({ contacto: contactoGuardado });
+
+        })
+    },
 
     
 
