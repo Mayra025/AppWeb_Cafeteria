@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit,Renderer2,ViewChild } from '@angular/core';
-import { CafeteriaService} from 'src/app/services/cafeteria.services'; 
+import { CafeteriaService} from 'src/app/service/cafeteria.services'; 
 import { Contacto } from 'src/app/models/contacto'; 
-import { Global } from '../../app/services/global';
+import { Global } from '../../app/service/global';
 import { NgForm } from '@angular/forms';
 
 @Component({
