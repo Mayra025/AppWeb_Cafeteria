@@ -39,6 +39,11 @@ router.get('/get-imagen/:imagen', cafeteriaController.getImagen);
 //guardar contacto
 router.post('/guardar-contacto',cafeteriaController.saveContacto);
 
+//PEDIDO
+router.post('/guardar-pedido',cafeteriaController.savePedido);
+
+//ver el pedido
+router.get('/pedidos', cafeteriaController.getPedidos);
 
 
 ///Para Usuario-Sesiones

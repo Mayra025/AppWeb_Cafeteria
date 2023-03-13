@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Contacto } from '../models/contacto';
-import { Plato } from '../models/plato'
+import { Plato } from '../models/plato';
+import { Pedido } from '../models/pedidos';
 import { Observable } from 'rxjs';
 import { Global } from './global';
 
@@ -56,6 +57,20 @@ export class CafeteriaService {
         let params = JSON.stringify(contacto);
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
         return this._http.post(this.url+'guardar-contacto',params,{headers: headers});
+    }
+
+    //guardar pedido
+    //http://localhost:3600/guardar-evento
+    guardarPedido(pedido: Pedido): Observable<any> {
+        let params = JSON.stringify(pedido);
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.post(this.url+'guardar-pedido',params,{headers: headers});
+    }
+
+    //http://localhost:3600/eventos
+    getPedidos():Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.get(this.url+'pedidos',{headers: headers});
     }
 
 }

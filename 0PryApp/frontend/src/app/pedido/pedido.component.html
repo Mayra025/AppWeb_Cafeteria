@@ -21,11 +21,34 @@
             </thead>
             <tbody>
               <tr *ngFor="let plato of platos">
-                <td><img src="{{ plato.imagen }}" width="10px" height="10px"/></td>
-                <td [routerLink]="['/plato',plato._id]" >{{ plato.nombre }}</td>
-                <td [routerLink]="['/plato',plato._id]">$ {{ plato.precio }}</td>
+                <td><img src="{{url+'get-imagen/'+plato.imagen}}" style="width: 100px; height: 50px;"/></td>
+                <td [routerLink]="['/plato',plato._id]" [routerLinkActive]="'active'">{{ plato.nombre }}</td>
+                <td [routerLink]="['/plato',plato._id]" [routerLinkActive]="'active'">$ {{ plato.precio }}</td>
                
               </tr>
             </tbody>
           </table>
+
+          <h2>TU PEDIDO </h2>
+        <br />
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+            <thead>
+              <tr>
+                <th>Nombre del Cliente</th>
+                <th>Plato</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pedido of pedidos">
+                <td >{{ pedido.nombrePropietario }}</td>
+                <td>{{pedido.nombrePlato }}</td>
+                <td >{{ pedido.cantidad }}</td>
+                <td >${{ pedido.precio }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+
 </div>

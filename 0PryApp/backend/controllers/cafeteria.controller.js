@@ -2,6 +2,7 @@
 
 var Contacto = require("../models/contacto");
 var Plato = require("../models/plato");
+var Pedido = require("../models/pedidos");
 var fs = require('fs');
 const path = require("path");
 
@@ -111,6 +112,37 @@ var controller = {
             }
         })
     },
+
+    //pedido
+    savePedido: function (req, res) {
+        var pedido = Pedido();
+        var params = req.body;
+
+        //capturando datos
+        pedido.nombrePropietario = params.nombrePropietario;
+        pedido.nombrePlato = params.nombrePlato;
+        pedido.cantidad = params.cantidad;
+        pedido.precio = (params.precio)*(pedido.cantidad);
+        
+        
+
+        pedido.save((err, pedidoGuardado) => {
+            if (err) return res.status(500).send({ message: 'Erros al guardar' });
+            if (!pedidoGuardado) return res.status(404).send({ message: 'No se ha guardao el plato en su pedido' });
+            return res.status(200).send({ pedido: pedidoGuardado });
+        })
+
+    },
+
+    getPedidos: function (req, res) {
+        Pedido.find({}).sort().exec((err, pedidos) => {
+            if (err) return res.status(500).send({ message: 'Error al recuperar los datos' });
+            if (!pedidos) return res.status(404).send({ message: 'No hay pedidos para mostrar' });
+            return res.status(200).send({ pedidos });
+        })
+
+    },
+
     // contacto
 
     saveContacto: function (req, res) {
@@ -130,7 +162,7 @@ var controller = {
             return res.status(200).send({ contacto: contactoGuardado });
 
         })
-    },
+    }
 
     
 

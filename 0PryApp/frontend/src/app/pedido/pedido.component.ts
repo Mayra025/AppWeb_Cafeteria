@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CafeteriaService } from '../service/cafeteria.services';
 import { Plato } from '../models/plato';
+import { Pedido } from '../models/pedidos';
 import { Global } from '../service/global';
 import { Subject } from 'rxjs';
 
@@ -12,6 +13,7 @@ import { Subject } from 'rxjs';
 })
 export class PedidoComponent implements OnInit{
   public platos: Plato[];
+  public pedidos: Pedido[]; 
   public url: string;
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
@@ -22,6 +24,7 @@ export class PedidoComponent implements OnInit{
   ){
     this.url = Global.url;
     this.platos = [];
+    this.pedidos = [];
 
     this._cafeteriaService.getPlatos().subscribe(
       res =>{
@@ -42,6 +45,7 @@ export class PedidoComponent implements OnInit{
       },
     };
     this.LoadInvoice();
+    this.getPedidos();
   }
 
   getPlatos(){
@@ -66,4 +70,20 @@ export class PedidoComponent implements OnInit{
       }
     )
   }
+
+  getPedidos() {
+    this._cafeteriaService.getPedidos().subscribe(
+      response => {
+        if (response.pedidos) {
+          this.pedidos = response.pedidos;
+        }
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
+  }
+
+  
+
 }
