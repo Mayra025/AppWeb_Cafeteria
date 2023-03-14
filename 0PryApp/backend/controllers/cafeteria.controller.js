@@ -122,8 +122,7 @@ var controller = {
         pedido.nombrePropietario = params.nombrePropietario;
         pedido.nombrePlato = params.nombrePlato;
         pedido.cantidad = params.cantidad;
-        pedido.precio = (params.precio)*(pedido.cantidad);
-        
+        pedido.email = params.email;
         
 
         pedido.save((err, pedidoGuardado) => {

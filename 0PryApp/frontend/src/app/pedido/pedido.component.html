@@ -8,8 +8,6 @@
           <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
           <div class="divider-custom-line"></div>
         </div>
-        <h2>Realiza Tu Pedido </h2>
-        <h4>Precione para agregar a tu orden</h4>
         <br />
         <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
             <thead>
@@ -30,25 +28,64 @@
           </table>
 
           <h2>TU PEDIDO </h2>
-        <br />
-        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
-            <thead>
-              <tr>
-                <th>Nombre del Cliente</th>
-                <th>Plato</th>
-                <th>Cantidad</th>
-                <th>Precio</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let pedido of pedidos">
-                <td >{{ pedido.nombrePropietario }}</td>
-                <td>{{pedido.nombrePlato }}</td>
-                <td >{{ pedido.cantidad }}</td>
-                <td >${{ pedido.precio }}</td>
-              </tr>
-            </tbody>
-          </table>
+        
+          <!-- Formulario de Contacto-->
+
+    <div class="formulario">
+      <h1 class="text-center text-uppercase text-secondary mb-0">FORMULARIO DE PEDIDO</h1>
+  <!-- Icon Divider-->
+      <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+      </div>
+
+      <div class="formularioPedido">
+          <form #pedidoForm="ngForm" (ngSubmit)="guardarPedido(pedidoForm)">
+              <p>
+                  <label for="nombrePropietario">Nombre del Cliente</label>
+                  <input type="text" name="nombrePropietario" #nombrePropietario="ngModel" [(ngModel)]="pedido.nombrePropietario" required>
+                  <span *ngIf="nombrePropietario.touched && !nombrePropietario.valid">
+                      Ingrese su nombre y apellido
+                  </span>
+              </p>
+              <p>
+                  <label for="nombrePlato">Nombre del Plato a pedir</label>
+                  <input type="text" name="nombrePlato" #nombrePlato="ngModel" [(ngModel)]="pedido.nombrePlato" required>
+                  <span *ngIf="nombrePlato.touched && !nombrePlato.valid">
+                      Ingrese el nombre del plato
+                  </span>
+              </p>
+              <p>
+                  <label for="cantidad">Ingrese la cantidad deseada</label>
+                  <input type="number" name="cantidad" #cantidad="ngModel" [(ngModel)]="pedido.cantidad" required>
+                  <span *ngIf="cantidad.touched && !cantidad.valid">
+                  Ingrese la cantidad
+                  </span>
+              </p>
+              <p>
+                  <label for="email">Ingrese su email</label>
+                  <input type="text" name="email" #email="ngModel" [(ngModel)]="pedido.email" required>
+                  <span *ngIf="email.touched && !email.valid">
+                      Ingrese su pedido
+                  </span>
+              </p>
+              <input type="submit" value="Guardar" [disabled]="!pedidoForm.form.valid">
+          </form>
+
+          <div class="message success" *ngIf="status=='success'">
+              Su pedido ha sido enviado
+          </div>
+
+          <div class="message failed" *ngIf="status=='failed'">
+             No se envio el pedido
+          </div>
+
+      </div>
+
+      <div class="col-lg-2">
+
+  </div>
 
 
 </div>

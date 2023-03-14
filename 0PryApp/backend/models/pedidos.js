@@ -6,7 +6,7 @@
     nombrePropietario: String,
     nombrePlato:String,
     cantidad:Number,
-    precio:Number,
+    email: String
     
  });
  module.exports=mongoose.model('pedido',PedidoSchema);

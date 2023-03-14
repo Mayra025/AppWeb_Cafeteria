@@ -4,6 +4,6 @@ export class Pedido{
         public nombrePropietario: String,
         public nombrePlato:String,
         public cantidad:Number,
-        public precio:Number,
+        public email: string
     ){}
 }

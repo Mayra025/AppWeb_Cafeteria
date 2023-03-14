@@ -4,7 +4,7 @@
     <h3>{{plato.nombre}}</h3>
     <h3>{{plato.precio}}</h3>
     <p *ngIf="confirm==false">
-        <a [routerLink]="['/pedidos']" class="button-edit">Guardar</a>
+        <a [routerLink]="['/pedido, pedido._id']" class="button-edit">Guardar</a>
         <br>
         <a (click)="setConfirm(true)" class="button-delete">Borrar</a>
     </p>

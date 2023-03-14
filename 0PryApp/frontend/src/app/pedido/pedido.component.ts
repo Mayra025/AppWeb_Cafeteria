@@ -4,6 +4,7 @@ import { Plato } from '../models/plato';
 import { Pedido } from '../models/pedidos';
 import { Global } from '../service/global';
 import { Subject } from 'rxjs';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-pedido',
@@ -18,7 +19,13 @@ export class PedidoComponent implements OnInit{
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
   Invoiceheader:any;
-
+  
+  //para el ingreso de un pedido
+  public pedido: Pedido;
+  public pedidoGuardar: Pedido;
+  public status: string;
+  public idGuardado: string;
+  public titulo: string
   constructor(
     private _cafeteriaService:CafeteriaService,
   ){
@@ -34,6 +41,13 @@ export class PedidoComponent implements OnInit{
         console.log(<any>error);
       }
     );
+
+    this.titulo = "Guardar Pedido";
+    this.url = Global.url;
+    this.pedido = new Pedido("", "", "", 1, "");
+    this.pedidoGuardar = new Pedido("", "", "", 1, "");
+    this.status = '';
+    this.idGuardado = '';
   }
   ngOnInit(): void {
     this.getPlatos();
@@ -84,6 +98,26 @@ export class PedidoComponent implements OnInit{
     );
   }
 
+  
+  //para guardar con archivos, idk 
+  guardarPedido (form: NgForm) {
+    this._cafeteriaService.guardarPedido(this.pedido).subscribe(
+      response => {
+        if (response.pedido) {
+                this.pedidoGuardar = response;
+                this.status = 'success';
+                console.log(response.pedido._id);
+                form.reset();
+              
+          } else {
+            this.status = 'failed';
+          }
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
+  }
   
 
 }
