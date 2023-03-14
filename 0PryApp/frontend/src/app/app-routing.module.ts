@@ -18,6 +18,7 @@ const router: Routes = [
   { path: 'pedido', component: PedidoComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'table', component: DatatableComponent },
+  { path: '**', component:InicioComponent },
 
   //Menu
   { path: 'Menu', component: MenuComponent },
