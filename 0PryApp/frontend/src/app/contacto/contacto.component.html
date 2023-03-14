@@ -1,5 +1,6 @@
 <!-- Page Content-->
 <div class="container px-4 px-lg-5">
+    <br> <br>
     <h1 class="text-center text-uppercase text-secondary mb-0">Estamos Aquí</h1>
     <!-- Icon Divider-->
     <div class="divider-custom">
@@ -8,107 +9,114 @@
         <div class="divider-custom-line"></div>
     </div>
 
-    <!-- Mapa-->
-    <div class="mapa row gx-4 gx-lg-5 align-items-center my-5">
-        <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63836.864583871546!2d-78.5377586117527!3d-0.1533147213628827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a5989171b75%3A0xcb87302c51f1645!2sLa%20Casa%20de%20la%20Humita%20y%20el%20Tamal%20Lojano!5e0!3m2!1ses-419!2sec!4v1676953828579!5m2!1ses-419!2sec" width="700" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+    <div class="row gx-5 justify-content-center">
 
-    <!-- Contacto-->        
-    <div class="contacto">
-        <h1 class="text-center text-uppercase text-secondary mb-0">CONTACTO</h1>
-        <!-- Icon Divider-->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
+        <div class="col">
+
+            <!-- Mapa-->
+            <div class="mapa row gx-4 gx-lg-5 align-items-center my-5">
+                <iframe class="mb-4 mb-lg-0"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8182994847784!2d-78.4509041!3d-0.0058587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d589ef06f52635%3A0xa09261477d390b71!2sWester%20Union%2FMi%20Vecino%20(MarketCoffeePlace)%20PetroEcuador!5e0!3m2!1ses-419!2sec!4v1678826933914!5m2!1ses-419!2sec"
+                    width="700" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-        <p>
-            <h2 >Dirección:</h2>
-            <a href="#" class="icon">?</a>
-            <h5> Selva Alegre Selva Alegre, Y Oe8-255 y, Quito 170521 <br></h5>
+        </div>
+        <div class="col">
 
-            <h2>Teléfonos:</h2>
-            <a href="#" class="icon">u</a>
-            <h5> 1800 486 482 <br></h5>
-            
-            <h2>Correo:</h2>
-            <a href="#" class="icon">@</a>
-            <h5> info@lacasadelahumita.ec <br></h5>   
-        <p>
+
+            <!-- Contacto-->
+            <div class="contacto">
+                <h4 style='font-size: 25px;'>
+                    <b>Contáctanos</b>
+                </h4>
+
+                <p>
+                <h2> <a class="icon text-decoration-none" style="color: azure;"> &nbsp; ?</a>
+                    Dirección :</h2>
+                <h5> San Antonio de Pichincha Av Equinoccial, Y, Quito <br></h5>
+
+                <h2> <a class="icon text-decoration-none " style="color: azure;">&nbsp; u</a> Teléfonos :</h2>
+                <h5> 1800 486 482 <br></h5>
+
+                <h2> <a class="icon text-decoration-none" style="color: azure;">&nbsp; @</a> Correo :</h2>
+                <h5> info@coffeplace.ec <br></h5>
+                <p>
+            </div>
+        </div>
     </div>
-
     <!-- Formulario de Contacto-->
 
     <div class="formulario">
-            <h1 class="text-center text-uppercase text-secondary mb-0">FORMULARIO DE CONTACTO</h1>
+        <h1 class="text-center text-uppercase text-secondary mb-0">FORMULARIO DE CONTACTO</h1>
         <!-- Icon Divider-->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <h4>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <h4>
             <b>Envíanos tus datos y recibe un cupón del mes, además
-            te mantendremos al día con nuestras promociones.</b></h4>
+                te mantendremos al día con nuestras promociones.</b>
+        </h4>
 
-            <div class="formularioContacto">
-                <br>
-                    <h2>{{titulo}}</h2>
-                <form #contactoForm="ngForm" (ngSubmit)="guardarContacto(contactoForm)">
-                    <p>
-                        <label for="nombre" style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Nombre</label>
-                        <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre" required>
-                        <span *ngIf="nombre.touched && !nombre.valid">
-                            Ingrese su nombre
-                        </span>
-                    </p>
-                    <p>
-                        <label for="apellido" style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Apellido</label>
-                        <input type="text" name="apellido" #apellido="ngModel" [(ngModel)]="contacto.apellido" required>
-                        <span *ngIf="apellido.touched && !apellido.valid">
-                            Ingrese su apellido
-                        </span>
-                    </p>
-                    <p>
-                        <label for="telefono" style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Teléfono</label>
-                        <input type="text" name="apellido" #telefono="ngModel" [(ngModel)]="contacto.telefono" required>
-                        <span *ngIf="telefono.touched && !telefono.valid">
-                            Ingrese un teléfono
-                        </span>
-                    </p>
-                    <p>
-                        <label for="email" style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Email o Correo</label>
-                        <input type="text" name="email" #email="ngModel" [(ngModel)]="contacto.email" required>
-                        <span *ngIf="email.touched && !email.valid">
+        <div class="formularioContacto">
+            <br>
+            <!-- <h2>{{titulo}}</h2> -->
+            <form #contactoForm="ngForm" (ngSubmit)="guardarContacto(contactoForm)">
+                <p>
+                    <label for="nombre"
+                        style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Nombre</label>
+                    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre" required>
+                    <span *ngIf="nombre.touched && !nombre.valid">
+                        Ingrese su nombre
+                    </span>
+                </p>
+                <p>
+                    <label for="apellido"
+                        style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Apellido</label>
+                    <input type="text" name="apellido" #apellido="ngModel" [(ngModel)]="contacto.apellido" required>
+                    <span *ngIf="apellido.touched && !apellido.valid">
+                        Ingrese su apellido
+                    </span>
+                </p>
+                <p>
+                    <label for="telefono"
+                        style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Teléfono</label>
+                    <input type="text" name="apellido" #telefono="ngModel" [(ngModel)]="contacto.telefono" required>
+                    <span *ngIf="telefono.touched && !telefono.valid">
+                        Ingrese un teléfono
+                    </span>
+                </p>
+                <p>
+                    <label for="email"
+                        style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Email
+                        o Correo</label>
+                    <input type="text" name="email" #email="ngModel" [(ngModel)]="contacto.email" required>
+                    <span *ngIf="email.touched && !email.valid">
                         Ingrese su email o correo
-                        </span>
-                    </p>
-                    <p>
-                        <label for="mensaje" style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Mensaje</label>
-                        <input type="text" name="mensaje" #mensaje="ngModel" [(ngModel)]="contacto.mensaje" required>
-                        <span *ngIf="mensaje.touched && !mensaje.valid">
-                            Ingrese su mensaje
-                        </span>
-                    </p>
-                    <input type="submit" value="Guardar" [disabled]="!contactoForm.form.valid">
-                </form>
+                    </span>
+                </p>
+                <p>
+                    <label for="mensaje"
+                        style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Mensaje</label>
+                    <input type="text" name="mensaje" #mensaje="ngModel" [(ngModel)]="contacto.mensaje" required>
+                    <span *ngIf="mensaje.touched && !mensaje.valid">
+                        Ingrese su mensaje
+                    </span>
+                </p>
+                <input type="submit" value="Guardar" [disabled]="!contactoForm.form.valid" class="btn btn-success">
+                <br>
+            </form>
 
-                <div class="message success" *ngIf="status=='success'">
-                    Su mensaje ha sido envido
-                </div>
-
-                <div class="message failed" *ngIf="status=='failed'">
-                   No se ha podido enviar el mensaje Intentelo otra vez
-                </div>
-
+            <div class="message success" *ngIf="status=='success'">
+                Su mensaje ha sido envido
             </div>
 
-            <div class="col-lg-2">
+            <div class="message failed" *ngIf="status=='failed'">
+                No se ha podido enviar el mensaje Intentelo otra vez
+            </div>
 
         </div>
-
-        
     </div>
-
+    <br><br><br>
 </div>
-    

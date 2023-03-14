@@ -1,94 +1,103 @@
 <div class="container px-4 px-lg-5 sm-5">
-      <!--Seccion Cafeteria-->
-      <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">Carfeteria</h1>
+  <!--Seccion Cafeteria-->
+  <br><br>
+  <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">Cafetería</h1>
 
-      <!-- Icon Divider-->
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
-        </div>
-        <br />
-        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
-            <thead>
-              <tr>
-                <th>Imagen</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let plato of platos">
-                <td><img src="{{url+'get-imagen/'+plato.imagen}}" style="width: 100px; height: 50px;"/></td>
-                <td [routerLink]="['/plato',plato._id]" [routerLinkActive]="'active'">{{ plato.nombre }}</td>
-                <td [routerLink]="['/plato',plato._id]" [routerLinkActive]="'active'">$ {{ plato.precio }}</td>
-               
-              </tr>
-            </tbody>
-          </table>
-
-          <h2>TU PEDIDO </h2>
-        
-          <!-- Formulario de Contacto-->
-
-    <div class="formulario">
-      <h1 class="text-center text-uppercase text-secondary mb-0">FORMULARIO DE PEDIDO</h1>
   <!-- Icon Divider-->
-      <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
-      </div>
+  <div class="divider-custom">
+    <div class="divider-custom-line"></div>
+    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+    <div class="divider-custom-line"></div>
+  </div>
+  <br />
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let plato of platos">
+        <td><img src="{{url+'get-imagen/'+plato.imagen}}" style="width: 100px; height: 50px;" /></td>
+        <td [routerLink]="['/plato',plato._id]" [routerLinkActive]="'active'">{{ plato.nombre }}</td>
+        <td [routerLink]="['/plato',plato._id]" [routerLinkActive]="'active'">$ {{ plato.precio }}</td>
 
-      <div style="background-color: lightgray; padding: 20px; text-align: center;">
-        <div class="formularioPedido" style="display: inline-block; background-color: white; padding: 20px;">
-          <form #pedidoForm="ngForm" (ngSubmit)="guardarPedido(pedidoForm)">
-            <p>
-              <label for="nombrePropietario" style="color: white; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Nombre del Cliente</label>
-              <input type="text" name="nombrePropietario" #nombrePropietario="ngModel" [(ngModel)]="pedido.nombrePropietario" required>
-              <span *ngIf="nombrePropietario.touched && !nombrePropietario.valid">
-                 Ingrese su nombre y apellido
-              </span>
-            </p>
-            <p>
-              <label for="nombrePlato" style="color: white; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Nombre del Plato a pedir</label>
-              <input type="text" name="nombrePlato" #nombrePlato="ngModel" [(ngModel)]="pedido.nombrePlato" required>
-              <span *ngIf="nombrePlato.touched && !nombrePlato.valid">
-                  Ingrese el nombre del plato
-              </span>
-            </p>
-            <p>
-              <label for="cantidad" style="color: white; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Ingrese la cantidad deseada</label>
-              <input type="number" name="cantidad" #cantidad="ngModel" [(ngModel)]="pedido.cantidad" required>
-              <span *ngIf="cantidad.touched && !cantidad.valid">
-                  Ingrese la cantidad
-              </span>
-            </p>
-            <p>
-              <label for="email" style="color: white; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Ingrese su email</label>
-              <input type="text" name="email" #email="ngModel" [(ngModel)]="pedido.email" required>
-              <span *ngIf="email.touched && !email.valid">
-                  Ingrese su pedido
-              </span>
-            </p>
-            <div style="text-align: center;">
-              <input type="submit" value="Guardar" [disabled]="!pedidoForm.form.valid">
-            </div>
-          </form>
-        </div>
-        <div class="message success" style="margin-top: 20px;" *ngIf="status=='success'">
-            Su pedido ha sido enviado
-        </div>
-        <div class="message failed" style="margin-top: 20px;" *ngIf="status=='failed'">
-           No se envio el pedido
-        </div>
-      </div>  
+      </tr>
+    </tbody>
+  </table>
+  <br>
 
+  <!-- Formulario de Contacto-->
+
+  <div class="formulario">
+    <h1 class="text-center text-uppercase text-secondary mb-0">FORMULARIO DE PEDIDO</h1>
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
     </div>
 
-      <div class="col-lg-2">
+    <h2>TU PEDIDO </h2>
+
+    <div style="background-color: lightgray; padding: 20px; text-align: center;">
+      <div class="formularioPedido" style="display: inline-block; background-color: white; padding: 20px;">
+        <form #pedidoForm="ngForm" (ngSubmit)="guardarPedido(pedidoForm)">
+          <p>
+            <label for="nombrePropietario"
+              style="color: white; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Nombre del
+              Cliente</label>
+            <input type="text" name="nombrePropietario" #nombrePropietario="ngModel"
+              [(ngModel)]="pedido.nombrePropietario" required>
+            <span *ngIf="nombrePropietario.touched && !nombrePropietario.valid" class="text-white">
+              Ingrese su nombre y apellido
+            </span>
+          </p>
+          <p>
+            <label for="nombrePlato"
+              style="color: white; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Nombre del
+              Plato a pedir</label>
+            <input type="text" name="nombrePlato" #nombrePlato="ngModel" [(ngModel)]="pedido.nombrePlato" required>
+            <span *ngIf="nombrePlato.touched && !nombrePlato.valid" class="text-white">
+              Ingrese el nombre del plato
+            </span>
+          </p>
+          <p>
+            <label for="cantidad"
+              style="color: white; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Ingrese la
+              cantidad deseada</label>
+            <input type="number" name="cantidad" #cantidad="ngModel" [(ngModel)]="pedido.cantidad" required>
+            <span *ngIf="cantidad.touched && !cantidad.valid" class="text-white">
+              Ingrese la cantidad
+            </span>
+          </p>
+          <p>
+            <label for="email"
+              style="color: white; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Ingrese su
+              email</label>
+            <input type="text" name="email" #email="ngModel" [(ngModel)]="pedido.email" required>
+            <span *ngIf="email.touched && !email.valid" class="text-white">
+              Ingrese su pedido
+            </span>
+          </p>
+          <div style="text-align: center;">
+            <input type="submit" value="Guardar" [disabled]="!pedidoForm.form.valid" class="btn btn-success">
+          </div>
+        </form>
+      </div>
+      <div class="message success" style="margin-top: 20px;" *ngIf="status=='success'">
+        Su pedido ha sido enviado
+      </div>
+      <div class="message failed" style="margin-top: 20px;" *ngIf="status=='failed'">
+        No se envio el pedido
+      </div>
+    </div>
 
   </div>
+
+  <br><br><br>
 
 
 </div>
