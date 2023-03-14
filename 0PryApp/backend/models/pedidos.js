@@ -2,9 +2,11 @@
  var mongoose=require('mongoose');
  var Schema=mongoose.Schema;
 
- var AlimentacionSchema=Schema({
-     nombre_plato:String,
-     imagen:String,
-     precio:Number
+ var PedidoSchema=Schema({
+    nombrePropietario: String,
+    nombrePlato:String,
+    cantidad:Number,
+    email: String
+    
  });
- module.exports=mongoose.model('alimentacion',AlimentacionSchema);
+ module.exports=mongoose.model('pedido',PedidoSchema);

@@ -8,566 +8,87 @@
           <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
           <div class="divider-custom-line"></div>
         </div>
-      <div class="row gx-4 gx-lg-5 ">
-        <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Humita</h2>
-                    <img src="../../assets/img/cafe1.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>3 Humitas con taza de Café <br> $ 2.00</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione su relleno</h4>
-                  <p>
-                    <input type="radio" name="relleno" value="Q" /> Queso <br>
-                    <input type="radio" name="relleno" value="P" /> Pollo <br>
-                    <input type="radio" name="relleno" value="C" /> Carne
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button name="humita">Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
+        <br />
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let plato of platos">
+                <td><img src="{{url+'get-imagen/'+plato.imagen}}" style="width: 100px; height: 50px;"/></td>
+                <td [routerLink]="['/plato',plato._id]" [routerLinkActive]="'active'">{{ plato.nombre }}</td>
+                <td [routerLink]="['/plato',plato._id]" [routerLinkActive]="'active'">$ {{ plato.precio }}</td>
+               
+              </tr>
+            </tbody>
+          </table>
 
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Empanadas de Morocho</h2>
-                    <img src="../../assets/img/cafe2.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5> 3 Empanadas con café <br>$ 2.00</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione su relleno</h4>
-                  <p>
-                    <input type="radio" name="relleno" value="Q" /> Queso <br>
-                    <input type="radio" name="relleno" value="P" /> Pollo <br>
-                    <input type="radio" name="relleno" value="C" /> Carne <br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
+          <h2>TU PEDIDO </h2>
+        
+          <!-- Formulario de Contacto-->
 
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Empanada de Verde</h2>
-                    <img src="../../assets/img/cafe3.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>3 Empanadas con café <br>$ 2.50</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione su relleno</h4>
-                  <p>
-                    <input type="radio" name="relleno" value="Q" /> Queso <br>
-                    <input type="radio" name="relleno" value="P" /> Pollo <br>
-                    <input type="radio" name="relleno" value="C" /> Carne <br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Bolón</h2>
-                    <img src="../../assets/img/cafe5.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>3 Bolones con café <br>$ 2.50</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione su relleno</h4>
-                  <p>
-                    <input type="radio" name="relleno" value="Q" /> Queso <br>
-                    <input type="radio" name="relleno" value="P" /> Pollo <br>
-                    <input type="radio" name="relleno" value="C" /> Carne <br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Tamal</h2>
-                    <img src="../../assets/img/cafe4.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>3 Tamales con café <br>$ 2.00</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione su relleno</h4>
-                  <p>
-                    <input type="radio" name="relleno" value="Q" /> Queso <br>
-                    <input type="radio" name="relleno" value="P" /> Pollo <br>
-                    <input type="radio" name="relleno" value="C" /> Carne <br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-      </div>
-
-      <!--Seccion Bebidas-->
-      <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">Bebidas</h1>
-
-      <!-- Icon Divider-->
-        <div class="divider-custom">
+    <div class="formulario">
+      <h1 class="text-center text-uppercase text-secondary mb-0">FORMULARIO DE PEDIDO</h1>
+  <!-- Icon Divider-->
+      <div class="divider-custom">
           <div class="divider-custom-line"></div>
           <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
           <div class="divider-custom-line"></div>
-        </div>
-      <div class="row gx-4 gx-lg-5 ">
-        <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Café</h2>
-                    <img src="../../assets/img/bebida1.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 2.00</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione el tipo de Café</h4>
-                  <p>
-                    <input type="radio" name="saborC" value="A" /> Americano <br>
-                    <input type="radio" name="saborC" value="Cap" /> Capuchino <br>
-                    <input type="radio" name="saborC" value="CLe" /> Café con Leche <br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Morocho</h2>
-                    <img src="../../assets/img/bebida2.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 1.75</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Selecciona el tipo de sabor</h4>
-                  <p>
-                    <input type="radio" name="saborM" value="V" /> Vainilla <br>
-                    <input type="radio" name="saborM" value="C" /> Canela <br>
-                    <input type="radio" name="saborM" value="P" /> Pasas <br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Chocolate Caliente</h2>
-                    <img src="../../assets/img/bebida3.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 2.00</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Selecciona el tipo de chocolate </h4>
-                  <p>
-                    <input type="radio" name="saborCh" value="S" /> Chocolate Suizo <br>
-                    <input type="radio" name="saborCh" value="A" /> Chocolate de Ambato <br>
-                    <input type="radio" name="saborCh" value="L" /> Chocolate de Loja <br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Batidos</h2>
-                    <img src="../../assets/img/bebida4.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 2.50</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione su sabor</h4>
-                  <p>
-                    <input type="radio" name="saborB" value="Pi" /> Piña <br>
-                    <input type="radio" name="saborB" value="M" /> Mora<br>
-                    <input type="radio" name="saborB" value="Pl" /> Platano <br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Jugos Naturales</h2>
-                    <img src="../../assets/img/bebida5.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 2.00</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione su sabor</h4>
-                  <p>
-                    <input type="radio" name="saborB" value="Pi" /> Piña <br>
-                    <input type="radio" name="saborB" value="Mo" /> Mora<br>
-                    <input type="radio" name="saborB" value="Ma" /> Mango <br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Gaseosas</h2>
-                    <img src="../../assets/img/bebida6.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 2.00</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione su sabor</h4>
-                  <p>
-                    <input type="radio" name="saborG" value="C" /> Coca Cola <br>
-                    <input type="radio" name="saborG" value="P" /> Pepsi<br>
-                    <input type="radio" name="saborG" value="F" /> Fanta <br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
       </div>
 
-      <!--Seccion Plato fuerte-->
-      <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">Platos Fuertes</h1>
-
-      <!-- Icon Divider-->
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
+      <div style="background-color: lightgray; padding: 20px; text-align: center;">
+        <div class="formularioPedido" style="display: inline-block; background-color: white; padding: 20px;">
+          <form #pedidoForm="ngForm" (ngSubmit)="guardarPedido(pedidoForm)">
+            <p>
+              <label for="nombrePropietario" style="color: white; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Nombre del Cliente</label>
+              <input type="text" name="nombrePropietario" #nombrePropietario="ngModel" [(ngModel)]="pedido.nombrePropietario" required>
+              <span *ngIf="nombrePropietario.touched && !nombrePropietario.valid">
+                 Ingrese su nombre y apellido
+              </span>
+            </p>
+            <p>
+              <label for="nombrePlato" style="color: white; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Nombre del Plato a pedir</label>
+              <input type="text" name="nombrePlato" #nombrePlato="ngModel" [(ngModel)]="pedido.nombrePlato" required>
+              <span *ngIf="nombrePlato.touched && !nombrePlato.valid">
+                  Ingrese el nombre del plato
+              </span>
+            </p>
+            <p>
+              <label for="cantidad" style="color: white; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Ingrese la cantidad deseada</label>
+              <input type="number" name="cantidad" #cantidad="ngModel" [(ngModel)]="pedido.cantidad" required>
+              <span *ngIf="cantidad.touched && !cantidad.valid">
+                  Ingrese la cantidad
+              </span>
+            </p>
+            <p>
+              <label for="email" style="color: white; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Ingrese su email</label>
+              <input type="text" name="email" #email="ngModel" [(ngModel)]="pedido.email" required>
+              <span *ngIf="email.touched && !email.valid">
+                  Ingrese su pedido
+              </span>
+            </p>
+            <div style="text-align: center;">
+              <input type="submit" value="Guardar" [disabled]="!pedidoForm.form.valid">
+            </div>
+          </form>
         </div>
-      <div class="row gx-4 gx-lg-5 ">
-        <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Seco de chivo</h2>
-                    <img src="../../assets/img/plato1.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 6.00</h5>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Guatita</h2>
-                    <img src="../../assets/img/plato2.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 6.00</h5>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Llapingacho</h2>
-                    <img src="../../assets/img/plato3.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 7.00</h5>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Fritada</h2>
-                    <img src="../../assets/img/plato4.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 9.00</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione el tipo</h4>
-                  <p>
-                    <input type="radio" name="tipoF" value="C" />Quiteña<br>
-                    <input type="radio" name="tipoF" value="P" />Costeña<br>
-                    <input type="radio" name="tipoF" value="Ch" />Chugchucaras<br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Menestras</h2>
-                    <img src="../../assets/img/plato5.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 5.00</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione la protenina</h4>
-                  <p>
-                    <input type="radio" name="proteinaM" value="C" /> Carne a la Plancha<br>
-                    <input type="radio" name="proteinaM" value="P" /> Pollo la Plancha<br>
-                    <input type="radio" name="proteinaM" value="Ch" /> Chuleta<br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Churrasco</h2>
-                    <img src="../../assets/img/plato6.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 6.00</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione la protenina</h4>
-                  <p>
-                    <input type="radio" name="proteinaC" value="C" /> Carne a la Plancha<br>
-                    <input type="radio" name="proteinaC" value="P" /> Pollo la Plancha<br>
-                    <input type="radio" name="proteinaC" value="Ch" /> Chuleta<br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-      </div>
-
-      <!--Seccion Postre-->
-      <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">Postres</h1>
-
-      <!-- Icon Divider-->
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
+        <div class="message success" style="margin-top: 20px;" *ngIf="status=='success'">
+            Su pedido ha sido enviado
         </div>
-      <div class="row gx-4 gx-lg-5 ">
-        <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Mousse</h2>
-                    <img src="../../assets/img/postre1.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 5.00</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione el tipo</h4>
-                  <p>
-                    <input type="radio" name="tipoM" value="CB" /> Chocolate Blanco<br>
-                    <input type="radio" name="tipoM" value="L" /> Limon<br>
-                    <input type="radio" name="tipoM" value="F" /> Fresa<br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
+        <div class="message failed" style="margin-top: 20px;" *ngIf="status=='failed'">
+           No se envio el pedido
+        </div>
+      </div>  
 
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Citron fruits</h2>
-                    <img src="../../assets/img/postre2.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 4.90</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione el sabor</h4>
-                  <p>
-                    <input type="radio" name="tipoCi" value="F" /> Fresa<br>
-                    <input type="radio" name="tipoCi" value="M" /> Mora<br>
-                    <input type="radio" name="tipoCi" value="L" /> Limón<br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
+    </div>
 
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Infiniment Passion</h2>
-                    <img src="../../assets/img/postre3.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 5.70</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione el sabor</h4>
-                  <p>
-                    <input type="radio" name="tipoI" value="F" /> Fresa<br>
-                    <input type="radio" name="tipoI" value="M" /> Mora<br>
-                    <input type="radio" name="tipoI" value="L" /> Limón<br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
+      <div class="col-lg-2">
 
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Tarta de manzana y nuez</h2>
-                    <img src="../../assets/img/postre4.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 2.50</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione el tipo de nuez</h4>
-                  <p>
-                    <input type="radio" name="tipoTartaN" value="C" /> Castilla<br>
-                    <input type="radio" name="tipoTartaN" value="M" /> Macadamia<br>
-                    <input type="radio" name="tipoTartaN" value="B" /> Brasil<br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
+  </div>
 
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Tiramisú</h2>
-                    <img src="../../assets/img/postre5.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 5.00</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione el sabor</h4>
-                  <p>
-                    <input type="radio" name="saborT" value="C" /> Chocolate<br>
-                    <input type="radio" name="saborT" value="F" /> Frutos Rojos<br>
-                    <input type="radio" name="saborT" value="P" /> Platano<br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
 
-          <div class=" col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-title">
-                    <h2 class="card-title">Selva negra</h2>
-                    <img src="../../assets/img/plato6.jpg" class="img-fluid rounded mb-3 mb-lg-0">
-                </div>
-                <div class="card-body">
-                    <h5>$ 2.00</h5>
-                </div>
-                <div class="card-footer">
-                  <h4>Seleccione el sabor</h4>
-                  <p>
-                    <input type="radio" name="saborSN" value="M"/> Mora<br>
-                    <input type="radio" name="saborSN" value="F" /> Fresa<br>
-                    <input type="radio" name="saborSN" value="U" /> Uvas<br>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <button id="sHumita" >Agregar al Carrito</button>
-                  <br>
-                </div>
-            </div>
-          </div>
-      </div>
 </div>

@@ -13,6 +13,8 @@ import { PedidoComponent } from './pedido/pedido.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { DatatableComponent } from './datatable/datatable.component';
+import { DataTablesModule } from "angular-datatables";
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { RegistroComponent } from './registro/registro.component';
     ContactoComponent,
     MenuComponent,
     PromocionesComponent,
+    DatatableComponent,
 
   ],
   imports: [
@@ -31,6 +34,7 @@ import { RegistroComponent } from './registro/registro.component';
     BrowserModule,
     AppRoutingModule, //para el modulo de rutas
     HttpClientModule,
+    DataTablesModule
 
   ],
   providers: [],

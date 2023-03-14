@@ -53,38 +53,38 @@
 
             <div class="formularioContacto">
                 <br>
-                            <h2>{{titulo}}</h2>
+                    <h2>{{titulo}}</h2>
                 <form #contactoForm="ngForm" (ngSubmit)="guardarContacto(contactoForm)">
                     <p>
-                        <label for="nombre">Nombre</label>
+                        <label for="nombre" style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Nombre</label>
                         <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre" required>
                         <span *ngIf="nombre.touched && !nombre.valid">
                             Ingrese su nombre
                         </span>
                     </p>
                     <p>
-                        <label for="apellido">Apellido</label>
+                        <label for="apellido" style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Apellido</label>
                         <input type="text" name="apellido" #apellido="ngModel" [(ngModel)]="contacto.apellido" required>
                         <span *ngIf="apellido.touched && !apellido.valid">
                             Ingrese su apellido
                         </span>
                     </p>
                     <p>
-                        <label for="telefono">Teléfono</label>
+                        <label for="telefono" style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Teléfono</label>
                         <input type="text" name="apellido" #telefono="ngModel" [(ngModel)]="contacto.telefono" required>
                         <span *ngIf="telefono.touched && !telefono.valid">
                             Ingrese un teléfono
                         </span>
                     </p>
                     <p>
-                        <label for="email">Email o Correo</label>
+                        <label for="email" style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Email o Correo</label>
                         <input type="text" name="email" #email="ngModel" [(ngModel)]="contacto.email" required>
                         <span *ngIf="email.touched && !email.valid">
                         Ingrese su email o correo
                         </span>
                     </p>
                     <p>
-                        <label for="mensaje">Mensaje</label>
+                        <label for="mensaje" style="color: black; font-weight: bold; text-align: left; display: block; margin-bottom: 10px;">Mensaje</label>
                         <input type="text" name="mensaje" #mensaje="ngModel" [(ngModel)]="contacto.mensaje" required>
                         <span *ngIf="mensaje.touched && !mensaje.valid">
                             Ingrese su mensaje
@@ -98,7 +98,7 @@
                 </div>
 
                 <div class="message failed" *ngIf="status=='failed'">
-                    no se envio wey
+                   No se ha podido enviar el mensaje Intentelo otra vez
                 </div>
 
             </div>

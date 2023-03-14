@@ -8,6 +8,7 @@ import { LoginComponent } from "./login/login.component";
 
 import { MenuComponent } from "./menu/menu.component";
 import { PromocionesComponent } from "./promociones/promociones.component";
+import { DatatableComponent } from "./datatable/datatable.component";
 
 //array de rutas
 const router: Routes = [
@@ -16,6 +17,8 @@ const router: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'pedido', component: PedidoComponent },
   { path: 'contacto', component: ContactoComponent },
+  { path: 'table', component: DatatableComponent },
+  { path: '**', component:InicioComponent },
 
   //Menu
   { path: 'Menu', component: MenuComponent },
