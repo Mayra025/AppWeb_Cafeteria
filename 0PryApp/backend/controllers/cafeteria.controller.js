@@ -6,9 +6,9 @@ const path = require("path");
 
 var controller = {
     inicio: function (req, res) {
-        return res.status(201).send(
-            "<h1>Hola 2</h1>"
-        );
+        // return res.status(201).send(
+        //     "<h1>Hola 2</h1>"
+        // );
     },
 
     // contacto

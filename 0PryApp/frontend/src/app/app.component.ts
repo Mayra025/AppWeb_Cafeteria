@@ -10,25 +10,5 @@ import { LoginService } from './service/login.service';
 })
 export class AppComponent {
   title = 'frontend';
-  // msjR: any;
-  // public log: boolean;
-
-  // constructor(
-  //   private loginService: LoginService,
-  // ) { this.log = false; }
-
-  // getR(r: any) {
-  //   console.log(r);
-  //   this.msjR = r;
-  //   this.log = r;
-
-  // }
-  // logout() {
-  //   this.loginService.logout().subscribe(res => {
-  //     console.log(res);
-  //     window.location.reload();
-
-  //   });
-  // }
-
+ 
 }

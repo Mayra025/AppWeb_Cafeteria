@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { CBodyDirective } from './c-body.directive';
@@ -30,7 +31,7 @@ import { RegistroComponent } from './registro/registro.component';
     FormsModule,
     BrowserModule,
     AppRoutingModule, //para el modulo de rutas
-    HttpClientModule,
+    HttpClientModule
 
   ],
   providers: [],

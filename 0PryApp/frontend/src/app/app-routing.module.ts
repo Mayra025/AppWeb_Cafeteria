@@ -8,8 +8,8 @@ import { LoginComponent } from "./login/login.component";
 import { MenuComponent } from "./menu/menu.component";
 import { PromocionesComponent } from "./promociones/promociones.component";
 import { EmpleadoComponent } from "./empleado/empleado.component";
+import { ClienteComponent } from "./cliente/cliente.component";
 const empleadoModule = () => import('./empleado/empleado.module').then(x => x.EmpleadoModule);
-// const clienteModule = () => import('./clientes/clientes.module').then(x => x.ClientesModule);
 
 //array de rutas
 const router: Routes = [
@@ -25,8 +25,9 @@ const router: Routes = [
   { path: 'empleado', component: EmpleadoComponent },
   { path: 'empleado', loadChildren: empleadoModule },
 
-  // { path: 'cliente', component: ClientesComponent },
-  // { path: 'cliente', loadChildren: clienteModule },
+  { path: 'cliente', component: ClienteComponent },
+
+
 ];
 
 //modulo de rutas, y agregar al app.module

@@ -1,11 +1,17 @@
 'use strict'
 var express = require('express');
+const cors = require('cors');
+
 var bodyParser = require('body-parser');
 var app = express();
 var cafeteriaRoutes = require('./routes/cafeteria.routes');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Agrega middleware para configurar cabeceras CORS
+app.use(cors({
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
+}));
 
 //para procesar metodos GET, POST, etc
 app.use((req, res, next) => {

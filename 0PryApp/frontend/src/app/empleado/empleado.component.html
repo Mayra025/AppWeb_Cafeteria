@@ -1,5 +1,13 @@
 <div class="container">
   <br> <br>
+  <div style="text-align: right;">
+    <button class="btn btn-gradient-primary" (click)="logout()">
+
+      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" style="margin: 6px; text-align: center;"></i>
+      Salir</button>
+  </div>
+
+
   <button class="btn btn-primary" (click)="agregar()">
     + Agregar Producto
   </button>
@@ -45,7 +53,7 @@
       <div class="card-body p-0">
         <div class="p-5">
           <div class="text-center">
-            <h4 class="text-black">Editar Producto  </h4> <br>
+            <h4 class="text-black">Editar Producto </h4> <br>
           </div>
           <span class="text-black text-bold"> Editando: <i> {{productoG._id}}</i> </span> <br>
 
@@ -97,7 +105,7 @@
             <input type="submit" name="Guardar" value="Guardar" [disabled]="!form.form.valid"
               class="btn btn-secondary btn-user btn-block">
             <button class="btn btn-danger" (click)="cerrar()"> Cancelar</button>
-          
+
           </form>
         </div>
       </div>

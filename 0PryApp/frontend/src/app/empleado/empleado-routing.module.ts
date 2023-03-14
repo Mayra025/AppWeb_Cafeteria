@@ -4,7 +4,6 @@ import { EcrearComponent } from './crear/ecrear.component';
 
 const routes: Routes = [
 
-    //solo rutas, no el empleado componete
     { path: 'ecrear', component: EcrearComponent }
 
 

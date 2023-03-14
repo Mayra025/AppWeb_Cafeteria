@@ -1,30 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
 .bg-sucess {
-    background: #85b434;
+  background: #85b434;
 }
 
 
 
 .bg-sucessf {
-    background: #ebeceb;
+  background: #ebeceb;
 }
 
 @font-face {
-    font-family: "WebSymbolsRegular";
-    src: url('assets/fonts/websymbols-regular-webfont.eot');
-    src: url('assets/fonts/websymbols-regular-webfont.eot?#iefix')format('embedded-opentype'),
-        url('assets/fonts/websymbols-regular-webfont.woff')format('woff'),
-        url('assets/fonts/websymbols-regular-webfont.ttf')format('truetype'),
-        url('assets/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular')format('svg');
+  font-family: "WebSymbolsRegular";
+  src: url('assets/fonts/websymbols-regular-webfont.eot');
+  src: url('assets/fonts/websymbols-regular-webfont.eot?#iefix')format('embedded-opentype'),
+    url('assets/fonts/websymbols-regular-webfont.woff')format('woff'),
+    url('assets/fonts/websymbols-regular-webfont.ttf')format('truetype'),
+    url('assets/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular')format('svg');
 
 
-    font-weight: normal;
-    font-style: normal;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .icon {
-    font-family: "WebSymbolsRegular";
+  font-family: "WebSymbolsRegular";
 }
 
 /* gestion empleado */
@@ -46,62 +46,63 @@ body{
 /*Menu Cafeteria*/
 /** Tarjetas Restaurante **/
 
-.wrap{
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .column-2.carta{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    column-gap: 1rem;
-    row-gap: 1rem;
-  }
-  
-  .plato-carta{
-    display: flex;
-    align-items: center;
-    border: 1px solid #e5e5e5;
-    border-radius: 6px;
-  }
-  
-  .img-plato-carta{
-    display: flex;
-    flex-basis: 25%;
-    justify-content: center;
-  }
-  
-  .img-plato-carta img{
-    max-width: 100px;
-    max-height: 75px;
-  }
-  
-  .title-plato-carta{
-    border: 1px solid #e5e5e5;
-    border-bottom: none;
-    border-top: none;
-    flex-basis: 60%;
-    padding: 0 1rem;
-  }
-  
-  .precio-plato-carta{
-    display: flex;
-    flex-basis: 15%;
-    justify-content: center;
-    font-weight: bold;
-  }
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  @media (max-width:680px){
-    .column-2.carta{
-      grid-template-columns: repeat(1,1fr);
-    }
-  }
+.column-2.carta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
 
-  /*Promociones*/
-  /*Carrucel*/
+.plato-carta {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+}
+
+.img-plato-carta {
+  display: flex;
+  flex-basis: 25%;
+  justify-content: center;
+}
+
+.img-plato-carta img {
+  max-width: 100px;
+  max-height: 75px;
+}
+
+.title-plato-carta {
+  border: 1px solid #e5e5e5;
+  border-bottom: none;
+  border-top: none;
+  flex-basis: 60%;
+  padding: 0 1rem;
+}
+
+.precio-plato-carta {
+  display: flex;
+  flex-basis: 15%;
+  justify-content: center;
+  font-weight: bold;
+}
+
+@media (max-width:680px) {
+  .column-2.carta {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/*Promociones*/
+/*Carrucel*/
 h1 {
   text-align: center;
 }
+
 #carrusel-caja {
   -moz-animation: automatizacion 15s infinite linear;
   -o-animation: automatizacion 15s infinite linear;
@@ -115,86 +116,148 @@ h1 {
   height: 500px;
   width: 300%;
 }
+
 #carrusel-contenido {
   margin: 0 auto;
   overflow: hidden;
   text-align: left;
 }
-.imagenes{
+
+.imagenes {
   height: 500px;
   width: 100%;
 }
+
 .carrusel-elemento {
   float: left;
   width: 33.333%;
 }
+
 @-moz-keyframes automatizacion {
   0% {
-      margin-left: 0;
+    margin-left: 0;
   }
+
   30% {
-      margin-left: 0;
+    margin-left: 0;
   }
+
   35% {
-      margin-left: -100%;
+    margin-left: -100%;
   }
+
   65% {
-      margin-left: -100%;
+    margin-left: -100%;
   }
+
   70% {
-      margin-left: -200%;
+    margin-left: -200%;
   }
+
   95% {
-      margin-left: -200%;
+    margin-left: -200%;
   }
+
   100% {
-      margin-left: 0;
-  }
-}
-@-webkit-keyframes automatizacion {
-  0% {
-      margin-left: 0;
-  }
-  30% {
-      margin-left: 0;
-  }
-  35% {
-      margin-left: -100%;
-  }
-  65% {
-      margin-left: -100%;
-  }
-  70% {
-      margin-left: -200%;
-  }
-  95% {
-      margin-left: -200%;
-  }
-  100% {
-      margin-left: 0;
-  }
-}
-@keyframes automatizacion {
-  0% {
-      margin-left: 0;
-  }
-  30% {
-      margin-left: 0;
-  }
-  35% {
-      margin-left: -100%;
-  }
-  65% {
-      margin-left: -100%;
-  }
-  70% {
-      margin-left: -200%;
-  }
-  95% {
-      margin-left: -200%;
-  }
-  100% {
-      margin-left: 0;
+    margin-left: 0;
   }
 }
 
+@-webkit-keyframes automatizacion {
+  0% {
+    margin-left: 0;
+  }
+
+  30% {
+    margin-left: 0;
+  }
+
+  35% {
+    margin-left: -100%;
+  }
+
+  65% {
+    margin-left: -100%;
+  }
+
+  70% {
+    margin-left: -200%;
+  }
+
+  95% {
+    margin-left: -200%;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes automatizacion {
+  0% {
+    margin-left: 0;
+  }
+
+  30% {
+    margin-left: 0;
+  }
+
+  35% {
+    margin-left: -100%;
+  }
+
+  65% {
+    margin-left: -100%;
+  }
+
+  70% {
+    margin-left: -200%;
+  }
+
+  95% {
+    margin-left: -200%;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+/* dashboard */
+
+.resumen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.resumen .resum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: gray;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(207, 207, 207);
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 4px 4px 21px 0px #e4e5e8;
+}
+
+.resumen .resum img {
+  width: 50px;
+  height: 50px;
+}
+
+.resumen .resum h5 {
+  font-size: 1rem;
+}
+
+.resumen .resum h5 span {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}

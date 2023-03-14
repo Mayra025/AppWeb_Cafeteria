@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-empleado',
   templateUrl: './empleado.component.html',
-  providers: [EmpleadoService,LoginService]
+  providers: [EmpleadoService, LoginService]
 })
 export class EmpleadoComponent implements OnInit {
   productos: any;
@@ -32,7 +32,7 @@ export class EmpleadoComponent implements OnInit {
   constructor(
     private _router: Router,
     private _empleadoService: EmpleadoService,
-    private _loginService:LoginService,
+    private _loginService: LoginService,
     private _route: ActivatedRoute
 
 
@@ -57,12 +57,6 @@ export class EmpleadoComponent implements OnInit {
     };
 
     this.LoadInvoice();
-
-    // this._route.params.subscribe(params => {
-    //   let id = params['id'];
-    //   //console.log(id);
-    //   this.getProducto(id);
-    // })
   }
 
   getProductos() {
@@ -160,7 +154,24 @@ export class EmpleadoComponent implements OnInit {
     }
   }
 
-  //
+  logout() {
+    if (confirm('¿Estás seguro que deseas salir?')) {
+      this._router.navigate(['/inicio']);
+
+      this._loginService.logout().subscribe(
+        resp => {
+          console.log(resp)
+          window.location.reload();
+
+          // this._router.navigate(['/login']);
+        }
+        // , err => {
+        //   console.log(err);
+        // }
+      )
+    }
+  }
+
 
 
 }

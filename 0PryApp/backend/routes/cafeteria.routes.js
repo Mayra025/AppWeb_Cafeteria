@@ -20,6 +20,8 @@ router.post('/create-user', usuarioController.saveUsuario);
 router.post('/login', usuarioController.login);
 router.get('/logout', usuarioController.logout);
 
+router.get('/cliente', usuarioController.getCliente);
+
 
 //Gestion Empleado
 var empleadoController = require('../controllers/empleado.controller');

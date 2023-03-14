@@ -16,9 +16,10 @@ export class LoginComponent {
   model: Usuario;
   public status: string;
   title: String = 'Iniciar sesión';
+  id: any = '';
 
   public error: string
-  // @Output('msj') msj = new EventEmitter<boolean>();
+  @Output('msj') msj = new EventEmitter<boolean>();
 
 
   constructor(
@@ -31,11 +32,6 @@ export class LoginComponent {
     this.error = '';
   }
 
-
-  // log() {
-  //   this.msj.emit(true);
-  // }
-
   login(frm: NgForm) {
 
     this.loginService.login(this.model.user, this.model.password, this.model.rol)
@@ -43,10 +39,17 @@ export class LoginComponent {
         this.status = 'success';
         console.log(res);
 
-
         switch (frm.value.rol) {
           case "cliente":
-            // this.router.navigate(['/cliente']);
+            this.router.navigate(['/cliente'], {
+              queryParams: {
+                user: this.model.user,
+                pwd: this.model.password,
+                rol: this.model.rol
+              },
+              fragment: 'success'
+            });
+
             break;
           case "empleado":
             this.router.navigate(['/empleado']);
@@ -64,7 +67,9 @@ export class LoginComponent {
         }
 
       );
+
   }
+
 
 
 
