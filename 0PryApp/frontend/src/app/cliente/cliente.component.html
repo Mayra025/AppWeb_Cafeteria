@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <div class="p-5">
+          <div style="text-align: right;">
+            <button class="btn btn-gradient-primary" (click)="logout()">
+
+              <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
+                style="margin: 6px; text-align: center;"></i>
+              Salir</button>
+          </div>
+          <!-- <div *ngIf="data"> -->
+          <h5>Su información {{data.rol}}: </h5>
+          <p>ID Sistema: {{data._id}}</p>
+          <p>Usuario: {{data.user}}</p>
+          <br>
+          <p>Nombre: {{data.nombre}}</p>
+          <p>Apellido: {{data.apellido}}</p>
+          <p>Domicilio: {{data.domicilio}}</p>
+          <p>Teléfono: {{data.telefono}}</p>
+          <p>Email: {{data.correo}}</p>
+
+
+          <!-- </div> -->
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- <div class="container">
+      <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+          <div class="p-5">
+            <div>
+              <div *ngIf="resumen" class="resumen">
+                <div class="resum">
+                  <img src="../../assets/imgs/cliente.png" alt="cliente">
+                  <h5>Clientes Registrados: <br> <span>{{resumen.pedidos}}</span></h5>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>-->
+</div>

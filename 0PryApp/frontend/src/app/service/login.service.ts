@@ -29,8 +29,15 @@ export class LoginService {
         return this._http.post(this.url + 'create-user', params, { headers: headers });
     }
 
-    logout(): Observable<any> {
+    // logout(): Observable<any> {
+    //     let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    //     return this._http.get(this.url + 'logout', { headers: headers, withCredentials: true });
+    // }
+    //http://localhost:3600/logout
+    logout() {
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
-        return this._http.post(this.url + 'logout', {}, { headers: headers, withCredentials: true });
+        return this._http.get(this.url + 'logout', { headers: headers });
     }
+
+
 }

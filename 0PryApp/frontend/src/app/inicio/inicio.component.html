@@ -3,10 +3,6 @@
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
         <img class="img-fluid rounded mb-4 mb-lg-0" src="assets/img/1banner.jpg" alt="..." />
-        <!--
-       <div class="texto-encima">
-            "TÓMATE UN <br> RESPIRO, TÓMATE UN <br> CAFÉ"
-        </div>   -->
     </div>
 
 
@@ -110,16 +106,6 @@
                 <div class="p-5">
 
                     <form class="user" #formInfo="ngForm">
-                        <!-- <div class="form-group">
-                            <label for="correo">Nombres Completos</label>
-                            <input type="text" name="nombreC" #nombreC="ngModel" [(ngModel)]="info.nombreC" required
-                                pattern="[a-zA-Z]+" class="form-control form-control-user"
-                                placeholder="Nombres y Apellidos" />
-                            <span *ngIf="nombreC.touched && !nombreC.valid">
-                                * Este campo es obligatorio
-                            </span>
-                        </div> -->
-
                         <div class="form-group">
                             <label for="correo">Correo</label>
                             <input type="text" name="correo" #correo="ngModel" [(ngModel)]="info.correo" required
@@ -131,7 +117,7 @@
                         </div>
                         <br>
                         <input type="submit" name="Enviar" [disabled]="!formInfo.form.valid"
-                            class="btn btn-sucess text-bold btn-block" (click)="enviar(formInfo)"> 
+                            class="btn btn-sucess text-bold btn-block" (click)="enviar(formInfo)">
                     </form>
                 </div>
             </div>
